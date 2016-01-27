@@ -1,0 +1,26 @@
+BE1: User begins to search for fish
+	VP1: User
+	VP2: Google Maps API ?
+		REQ1: App must recieve geolocation of User
+		REQ2: App must recieve the information regarding the Fish
+		REQ3: App must return the most probably fish with information given
+		REQ4: App must add the identified fish to a global system
+		REQ5: App must display to the user the possible fish
+
+BE2: User requests statistics for a specific lake
+	VP1: User
+	VP2: Google Maps API ?
+		REQ1: App must recieve most up to date information from global system
+		REQ2: App must recieve geolocation of User or Lake
+		REQ3: App must display the information of the Lake to the User
+
+
+** Runs on Assumption User knows exactly what they caught **
+BE3: User attempts to add Fish to Lake Statistics
+	VP1: User
+	VP2: Google Maps API ?
+		REQ1: App must show a list of valid fish to add to statistics
+		REQ2: App must recieve a choice from the User from list
+		REQ3: App must add the chosen fish to the global system
+
+
