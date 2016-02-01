@@ -1,4 +1,6 @@
 \documentclass{article}
+\usepackage{graphicx}
+\usepackage{float}
 
 \title{Software Specification Requirements: \\ IdentiFisher \\ Group 7}
 
@@ -9,8 +11,8 @@ McDonald, Christopher\\
 Guo, Tian\\
 \texttt{000000}
 \and
-Murray, Shanelle\\
-\texttt{000000}
+Murray, Shandelle\\
+\texttt{1303109}
 \and
 Cheung, Ocean\\
 \texttt{000000}
@@ -38,7 +40,7 @@ The purpose of the SRS is to provide a detailed account of all the expected func
 and requirements of the Software system. It will go into detail regarding the system
 as a whole, who we expect to use it and any relevant information one would need
 to endorse or build the system. Lastly, we will outline both the functional and
-non-functional requirements of the project that are necessary for the systems
+non-functional requirements of the project that are necessary for the system's
 success. The intended audience of this document is any shareholders that are involved in this
 project. This could include, but is not limited to; the investors, developers, managers,
 marketers or human resource workers. Every person which is an entity in the aforementioned
@@ -46,10 +48,10 @@ list should all take an interest in the details outlined hereafter to ensure eve
 has a clear idea of what the software system should do.
 
 \subsection{Scope}
-The software system will be named hereafter as Indentifisher, which is an Android Application.
+The software system will be named hereafter as IdentiFisher, which is an Android Application.
 This system will be a utility application for anyone who fishes, either recreationally or
 competivitely. It also will service novice to experienced fishers. Identifisher will allow
-the user to give information about a recently caught fish and help to indentify what type
+the user to give information about a recently caught fish and help to identify what type
 of fish it is. From there, it can collect data and track what fish are caught where. We
 hope to build a global logging system that will provide percentage catch rates by lake,
 educate young, novice fishers and integrate technology into a relatively non-technology field.
@@ -68,7 +70,7 @@ Same goes for this, anything can be added as needed. I can cite if you wish.
 \fi
 
 \subsection{Overview}
-Thus far we have given a very brief overview of the Indentifisher application, its intended
+Thus far we have given a very brief overview of the IdentiFisher application, its intended
 use and what we expect a typical user would be. Going forward, we will go into deeper detail
 regarding those topics and more. The next section will give far more information regarding
 the application and some of the external matters regarding the system. After that, functional
@@ -76,11 +78,27 @@ requirements will be listed with non-functional requirements being the last sect
 
 \section{Overall Description}
 
+\iffalse
+This is still a rough draft of the overall desciption. If anyone would like to edit/add to this section, feel free.
+\fi
+
 \subsection{Product Perspective}
 
+The IdentiFisher application is similar to other applications that, by user request, analyze textual input or images in order to identify an entity. It is independent as it is not intended to be used as part of a larger system; however, it will interface with an online mapping system in order to perform geolocational functions.  
+
 \subsection{Product Functions}
+The IdentiFisher application will allow the user to input textual or pictorial data representing a specific fish, request an estimation of the type of fish described, and request statistical information about fish in a specific location. Secondly, the application must interface with an online mapping system in order to determine the geolocation of the user. The application must also be able to access a collection of data related to fish population statistics. Finally, the application must determine and display reasonable predictions about the type of fish the user has described. 
+
+\begin{figure}[H]
+	\includegraphics[scale=0.7]{images/contextdiagram}
+	\caption{Context Diagram of IdentiFisher Application}
+\end{figure}
+
 
 \subsection{User Characteristics}
+The IdentiFisher application is intended to be used by novice to experienced fishers who wish to identify captured fish or access geographical fish population statistics. 
+
+Technologically, an intended user of the application should have access to a device on which they are capable of installing and accessing an application, establishing an internet connection, as well as generating and inputting textual and pictorial data. 
 
 \subsection{Constraints}
 
