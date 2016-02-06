@@ -34,24 +34,24 @@ Revision 0: This is the first draft written from the authors listed on the Title
 
 \subsection{Purpose}
 The purpose of the SRS is to provide a detailed account of all the expected functions
-and requirements of the Software system. It will go into detail regarding the system
-as a whole, who we expect to use it and any relevant information one would need
+and requirements of the software system. It will go into detail regarding the system
+as a whole, who we expect to use it, and any relevant information one would need
 to endorse or build the system. Lastly, we will outline both the functional and
 non-functional requirements of the project that are necessary for the system's
-success. The intended audience of this document is any shareholders that are involved in this
-project. This could include, but is not limited to; the investors, developers, managers,
-marketers or human resource workers. Every person which is an entity in the aforementioned
-list should all take an interest in the details outlined hereafter to ensure every person
+success. The intended audience of this document includes any stakeholders that are involved in this
+project. This could include, but is not limited to, the investors, developers, managers,
+marketers and human resource workers. Every person who is an entity in the aforementioned
+list should take an interest in the details outlined hereafter to ensure that every person
 has a clear idea of what the software system should do.
 
 \subsection{Scope}
-The software system will be named hereafter as IdentiFisher, which is an Android Application.
+The software system will be named hereafter as IdentiFisher, which is an Android application.
 This system will be a utility application for anyone who fishes, either recreationally or
-competivitely. It also will service novice to experienced fishers. Identifisher will allow
+competivitely. It will service beginner to experienced fishers. Identifisher will allow
 the user to give information about a recently caught fish and help to identify what type
-of fish it is. From there, it can collect data and track what fish are caught where. We
-hope to build a global logging system that will provide percentage catch rates by lake,
-educate young, novice fishers and integrate technology into a relatively non-technology field.
+of fish it is. From there, it can collect data and track which types of fish are caught where. The aim is to
+build a global logging system that will provide percentage catch rates by lake,
+educate young, novice fishers, and integrate technology into a relatively non-technological field.
 
 
 \subsection{Definitions, Acronyms, and Abbreviations}
@@ -59,44 +59,33 @@ educate young, novice fishers and integrate technology into a relatively non-tec
 \textbf{Definition:}
 
 \begin{itemize}
-	\item IdentiFisher - The Application being referenced in this document.
+	\item IdentiFisher - The application being referenced in this document.
 \end{itemize}
 \textbf{Acronyms:}
 
 \begin{itemize}
 	\item API - Application Program Interface
 	\item OS - Operation System
-	\item SDK - Software Developement Kit
+	\item SDK - Software Development Kit
 	\item GPS - Global Positioning System
 \end{itemize}
-\textbf{Abbreviations:}
 
-\iffalse
-Anything can be added either by anyone on the team including myself, Chris.
-\fi
+\textbf{Abbreviations:}
 
 \subsection{References}
 
-\iffalse
-Same goes for this, anything can be added as needed. I can cite if you wish.
-\fi
-
 \subsection{Overview}
-Thus far we have given a very brief overview of the IdentiFisher application, its intended
-use and what we expect a typical user would be. Going forward, we will go into deeper detail
-regarding those topics and more. The next section will give far more information regarding
+Thus far a very brief overview has been provided of the IdentiFisher application, its intended
+use, and what we expect a typical user would be. Going forward, we will go into deeper detail
+regarding those topics and more. The next section, the overall description, will give far more information regarding
 the application and some of the external matters regarding the system. After that, functional
-requirements will be listed with non-functional requirements being the last section of this document.
+requirements will be listed, with non-functional requirements making up the last section of this document.
 
 \section{Overall Description}
 
-\iffalse
-This is still a rough draft of the overall desciption. If anyone would like to edit/add to this section, feel free.
-\fi
-
 \subsection{Product Perspective}
 
-The IdentiFisher application is similar to other applications that,
+The IdentiFisher application is similar to other Android applications that,
 by user request, analyze textual input or images in order to identify
 an entity. It is independent as it is not intended to be used as part
 of a larger system; however, it will interface with an online mapping
@@ -108,7 +97,7 @@ The IdentiFisher application will:
 	\item
 	interface with an online mapping system in order to determine the geolocation of the user
 	\item
-	be able to access a collection of data related to catch-rate statistics per body of water
+	be able to access a collection of data related to catch rate statistics per body of water
 	\item
 	determine and display reasonable predictions about the type of fish the user has described
 	\item
@@ -116,7 +105,7 @@ The IdentiFisher application will:
 	\item
 	request an educated prediction of the type of fish described
 	\item
-	request statistical information such as catch-rate about fish in a specific location
+	request statistical information such as catch rate about fish in a specific location
 \end{itemize} 
 
 
@@ -129,10 +118,10 @@ The IdentiFisher application will:
 \subsection{User Characteristics}
 \begin{itemize}
 	\item
-	The IdentiFisher application is intended to be used by novice to experienced fishers who wish to identify the type of fish they have caught or access geographical catch-rate statistics.
+	The IdentiFisher application is intended to be used by beginner to experienced fishers who wish to identify the type of fish they have caught or access geographical catch rate statistics.
 
 	\item
-	Technologically, an intended user of the application should have access to a device on which they are capable of installing and accessing an application, establishing an internet connection, as well as generating and inputting textual and pictorial data. 
+	Technologically, an intended user of the application should have access to a mobile device on which they are capable of installing and accessing an application, establishing an internet connection, as well as generating and inputting textual and pictorial data. 
 \end{itemize}
 
 \subsection{Constraints}
@@ -141,10 +130,10 @@ The IdentiFisher application will:
 	Since the statistics about a lake are generated by actual users of the application, the method by which data is collected must be subject to strict integrity constraints. The application must employ a method of data verification before adding it to the statistics available to other users of the application. 
 
 	\item
-	The application's functionality is constrained by the OS/Software framework on which through which the application is being written, which is Android/SDK/Java.
+	The application's functionality is constrained by the OS/Software framework through which the application is being written, which is Android/SDK/Java.
 
 	\item
-	Although the application does not have any notable budget constraints, there are time constraints to be considered. The Software Requirements Specification must be complete by February 8, 2016. The application must have been thoroughly tested and be fully functional by April 8th, 2016.
+	Although the application does not have any notable budget constraints, there are time constraints to be considered. This document, the Software Requirements Specification, must be complete by February 8, 2016. The application must have been thoroughly tested and be fully functional by April 3th, 2016.
 \end{itemize}
 
 \subsection{Assumptions \& Dependencies}
@@ -153,13 +142,13 @@ The IdentiFisher application will:
 	An important assumption is that a user of the application is inputting data which represents a real fish and not data that is fake or replicated from another source. This includes inputting images from the internet or simply inputting details about a fish that the user has not actually caught.
 	
 	\item
-	It is assumed that the user has access to a GPS-enabled mobile device with an internet connection while they are at the location where they have caught the fish they wish to identify.
+	It is assumed that the user has access to a GPS-enabled mobile device with an internet connection through which they may access this application while they are at the location where they have caught the fish they wish to identify.
 \end{itemize}
 
 \subsection{Apportioning of Requirements}
 
 \iffalse
-Have not determined yet whether there are requirements that we be delayed until the future.
+There are currently no requirements that will delayed until the future.
 \fi
 
 \section{Functional Requirements}
@@ -189,89 +178,82 @@ Have not determined yet whether there are requirements that we be delayed until 
 \section{Non-Functional Requirements}
 
 \subsection{Look and Feel Requirements}
-The IdentiFisher must have an attractive design, with an 70\% satisfaction rate with Users.
 \subsubsection{Apperance Requirements}
-The IdentiFisher must look professional with a 70\% satisfaction rate with Users.
+The Identifisher application must have an attractive design and look professional with a 70\% satisfaction rate among users concerning the appearance of the application.
 \subsubsection{Style Requirements}
-The Identifisher must have a simple design to promote usability. This is ensure a fast learning curve for the User.
+The Identifisher application must have a simple design to promote usability. This is to ensure a small learning curve for users.
 
 \subsection{Usability and Humanity Requirements}
 \subsubsection{Ease of Use Requirements}
-The IdentiFisher must be easy to use by people of ages 10 and above.
+The IdentiFisher application must be easy to use by people of ages 10 and above.
 \subsubsection{Personalization and Internationalization Requirements}
-The IdentiFisher must have English language support.
+The IdentiFisher application must have English language support.
 \subsubsection{Learning Requirements}
-The IdentiFisher must be easy to learn by people of ages 10 and above. The User should take no longer than
-5 minutes.
+The IdentiFisher application must be easy to learn by people of ages 10 and above. Users should take no longer than five minutes in order to familiarize themselves with the application.
 \subsubsection{Understandability and Politeness Requirements}
-The IdentiFisher must contain no offensive language.
+The IdentiFisher application must contain no offensive language.
 \subsubsection{Accessibility Requirements}
-The IdentiFisher must be usuable by at least 95\% of people with acceptable vision.
+The IdentiFisher application must be usable by at least 95\% of people with acceptable vision.
 \subsection{Performance Requirements}
 \subsubsection{Speed and Latency Requirements}
-The IdentiFisher must respond to a User input in less than 2 seconds.
+The IdentiFisher application must respond to basic user input within less than 5 seconds.
 \subsubsection{Safety-Critical Requirements}
-The IdentiFisher must be safe to use with a 0\% mortality rate.
+The IdentiFisher application must be safe to use with a 0\% mortality rate.
 \subsubsection{Percision or Accuracy Requirements}
-The IdentiFisher must produce correct identifications 75\% of attempts.
+The IdentiFisher application must produce correct identifications 75\% of the time provided the input is reasonably dependable.
 \subsubsection{Reliability and Availability Requirements}
-The IdentiFisher must be operational and responsive 100\% of the time.
+The IdentiFisher application must be operational and responsive 100\% of the time, except during maintenance or update procedures.
 \subsubsection{Robustness or Fault-Tolerance Requirements}
-The IdentiFisher must produce correct identifications 50\% of the time in high-noise environments. This could include
-ambigous attributes, low light pictures and small resolution images.
+The IdentiFisher application must produce correct identifications 60\% of the time in high-noise environments. This could include
+ambigous attributes, low light pictures, and small resolution images.
 \subsubsection{Capacity Requirements}
-The IndentiFisher must be able to be used for 1 image or query at a time, for more than 95\% Users.
+The IdentiFisher application must be able to be used for 1 image or query at a time, for more than 95\% of users.
 \subsubsection{Scalability or Extensiblity Requirements}
-The IndentFisher must be designed modurally such that multiple types of inputs can be added with ease.
+The IdentFisher application must be designed such that multiple types of inputs can be added with ease.
 \subsubsection{Longevity Requirements}
-The IdentiFisher must remain operational for at least 3 years.
+The IdentiFisher application must be available to acquire and remain operational for at least three years.
 
 \subsection{Operational and Environmental Requirements}
 \subsubsection{Expected Physical Environment}
-The IdentiFisher will exclusively be running on the Android Operating System which is on a smartphone.
+The IdentiFisher application will exclusively be running on the Android OS which is on a smartphone.
 \subsubsection{Requirments with Interfacing with Adjacent Systems}
-The IdentiFisher must recieve over a 95\% apporval rate from the Google Maps API.
+The IdentiFisher application must recieve over a 95\% approval rate from the online mapping system API.
 \subsubsection{Productization Requirements}
-The IndentFisher must be able to be uploaded to the Android Play Store. It must also be able to be installed
-from it with no User interaction after the initial prompt.
+The IdentFisher application must be able to be uploaded to the Android Play Store. It must also be able to be installed from it with no user interaction after the initial prompt.
 \subsubsection{Release Requirements}
-The IdentiFisher must be ready to be released by April 3, 2016.
+The IdentiFisher application must be ready to be released by April 3, 2016.
 
 \subsection{Maintainability and Support Requirements}
 \subsubsection{Maintainence Requirements}
-The IdentiFisher must be easily maintained for the time it stays operational.
+The IdentiFisher application must be easily maintained for the time it stays operational.
 \subsubsection{Supportability Requirements}
-The IdentiFisher must have technical support for all of the Users.
+The IdentiFisher application must have technical support for all of the users.
 \subsubsection{Adaptiblity Requirements}
-The IdentiFisher must adapt to changes and updates in the Android operating system and other dependancies.
+The IdentiFisher application must adapt to changes and updates in the Android OS and other dependencies.
 
 \subsection{Security Requirements}
 \subsubsection{Access Requirements}
-The IndentiFisher will be available to all Users which satisy the Android Play Store requirements to
-download applications.
+The IdentiFisher application will be available to all users which satisfy the Android Play Store requirements to download applications.
 \subsubsection{Integrity Requirements}
-The IdentiFisher must encrypt data transfered from the modules of the design to ensure integrity.
+The IdentiFisher application must encrypt data transferred from the modules of the design to ensure integrity.
 \subsubsection{Privacy Requirements}
-The IdentiFisher must adhere to the principle of least privilege and not access information regarding
-the User it does not need.
+The IdentiFisher application must adhere to the principle of least privilege and not access information regarding the user that it does not need.
 \subsubsection{Audit Requirements}
-The IndentiFisher will not have any Audit Requirements.
+The IdentiFisher application does not have any Audit Requirements.
 \subsubsection{Immunity Requirements}
-The IndentiFisher must store a back-up of information regarding which Fish were caught in which lake
-in the event it is corrupted.
+The IdentiFisher application must store a back-up copy of information regarding which fish were caught in which lake in the event that it is corrupted.
 
 \subsection{Cultural and Political Requirements}
 \subsubsection{Cultural Requirements}
-The IdentiFisher must not be offensive towards any culture.
+The IdentiFisher application must not be offensive towards any culture.
 \subsubsection{Political Requirements}
-The IdentiFisher must not have any political significance or influence.
+The IdentiFisher application must not have any political affiliation or influence.
 
 \subsection{Legal Requirements}
 \subsubsection{Complicance Requirements}
-The IdentiFisher must not go against and laws or regulations in the Country
-it operates in or APIs being used.
+The IdentiFisher application or APIs being used must not go against andy laws or regulations in the country it operates in.
 \subsubsection{Standards Requirements}
-The IndentiFisher will not have Standards Requirements.
+The IdentiFisher application does not have Standards Requirements.
 
 \newpage
 \listoffigures
