@@ -152,27 +152,39 @@ There are currently no requirements that will delayed until the future.
 \fi
 
 \section{Functional Requirements}
-	\textbf{Requirement \#: 1}\\
-	\textbf{Description:} The application must accept inputs from the user about the physical specifications of a fish and return an output of what breed of fish the user might have.\\
-	\textbf{Rationale: } The application will not be able to give an accurate estimate of what the breed of fish may be without accepting any inputs.
 
-	\noindent\rule{12cm}{0.4pt} \\
+	\noindent\textbf{Business Event \#1:} \\
+	\textbf{Description:} The User begins to search for a particular fish. \\
+	\textbf{Persons Involved:} The User, Google Maps \\
+	\textbf{Requirements:}
+	\begin{itemize}
+		\item The application must be able to access the user's geolocation.
+		\item The application must accept inputs from the user about the physical specifications of a fish and return an output of what breed of fish the user might have.
+		\item The application must be able to return the most probable fish given the inputs of the User.
+		\item The application must allow the user to submit their catch results from fishing.
+	\end{itemize}
 
-	\noindent\textbf{Requirement \#: 2}\\
-	\textbf{Description:} The application must be able to access the user's geolocation.\\
-	\textbf{Rationale:} The geolocation data could help the user identify what breed of fish the user might have because not all fish exist in every lake.\\
+	\noindent\textbf{Business Event \#2:} \\
+	\textbf{Description:} The User requests lake statistics. \\
+	\textbf{Persons Involved:} The User, Google Maps \\
+	\textbf{Requirements:}
+	\begin{itemize}
+		\item The application must recieve up to date information regarding each specified lake.
+		\item The application must be able to access the user's geolocation.
+		\item The application must show the User the statistics for each lake specified.
+	\end{itemize}
 
-	\noindent\rule{12cm}{0.4pt} \\
+	\noindent\textbf{Business Event \#3:} \\
+	\textbf{Description:} The User requests to add a caught fish to the system. \\
+	\textbf{Persons Involved:} The User, Google Maps \\
+	\textbf{Requirements:}
+	\begin{itemize}
+		\item The application must be able to access the user's geolocation.
+		\item The application must be able to show accepted fish per lake.
+		\item The application must recieve choice of fish from the User.
+		\item The application must allow the user to submit their catch results from fishing.
+	\end{itemize}
 
-	\noindent\textbf{Requirement \#: 3}\\
-	\textbf{Description:} The application must display the fishing statistics of different bodies of water by the geolocation specified from the user.\\
-	\textbf{Rationale:} The user should be able to access the information about the statistics regarding the odds of catching certain breeds of fish in the specified body of water. \\
-
-	\noindent\rule{12cm}{0.4pt} \\
-
-	\noindent\textbf{Requirement \#: 4}\\
-	\textbf{Description:} The application must allow the user to submit their catch results from fishing.\\
-	\textbf{Rationale:} The statistics regarding the odds of catching certain breeds of fish in the specified body of water should be accurate and will require constant updates because fish populations could fluctuate over time. \\
 
 
 \section{Non-Functional Requirements}
