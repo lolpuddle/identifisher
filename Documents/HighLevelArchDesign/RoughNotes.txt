@@ -1,0 +1,20 @@
+Example:
+Classes
+	SubClasses
+
+ExpertManager
+
+Expert
+	Colour
+	Pattern
+	Place?
+	Shape
+
+Database
+
+FrontEnd (ViewController)
+	Home
+	Settings
+	LookUpLake
+	IndentiFisher
+
