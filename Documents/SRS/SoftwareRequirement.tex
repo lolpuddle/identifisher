@@ -26,6 +26,13 @@
 \newpage
 \tableofcontents
 Revision 0: This is the first draft written from the authors listed on the Title page.
+Revision 1: Due to constructive critisicm from the TAs of the Software Engineering 3A04 Winter 2016, the following sections have been changed:
+\begin{itemize}
+	\item Section 1.3: Abbreviations
+	\item Section 2.3: User Characteristics 
+	\item Section 3: Functional Requirements Reformatting
+	\item Section 4: Non-Functional Requirements
+\end{itemize}
 \newpage
 \section{Introduction}
 
@@ -57,6 +64,7 @@ educate young, novice fishers, and integrate technology into a relatively non-te
 
 \begin{itemize}
 	\item IdentiFisher - The application being referenced in this document.
+	\item Expert - A module which can identify types of Fish when given data of a predetermined domain
 \end{itemize}
 \textbf{Acronyms:}
 
@@ -67,6 +75,7 @@ educate young, novice fishers, and integrate technology into a relatively non-te
 	\item GPS - Global Positioning System
 \end{itemize}
 \textbf{Abbreviations:}
+There are no abbreviations that are required knowledge for this document.
 
 \subsection{References}
 There are no references needed for this document.
@@ -119,6 +128,8 @@ The IdentiFisher application will:
 
 	\item
 	Technologically, an intended user of the application should have access to a mobile device on which they are capable of installing and accessing an application, establishing an internet connection, as well as generating and inputting textual and pictorial data. 
+
+	\item The typical User would be over 10 years old as they would need to both able to fish and be a mobile device user.
 \end{itemize}
 
 \subsection{Constraints}
@@ -151,34 +162,57 @@ There are currently no requirements that will be delayed until the future.
 
 	\noindent\textbf{Business Event \#1:} \\
 	\textbf{Description:} The user begins to search for a particular fish. \\
-	\textbf{Persons Involved:} The User, Google Maps \\
+	\textbf{View Point #1:} The User \\
 	\textbf{Requirements:}
 	\begin{itemize}
-		\item F1.1 The application must be able to access the user's geolocation.
-		\item F1.2 The application must accept inputs from the user about the physical specifications of a fish and return an output of what breed of fish the user might have.
-		\item F1.3 The application must be able to return the most probable fish given the inputs of the user.
-		\item F1.4 The application must allow the user to submit their catch results from fishing.
+		\item F1.1 The application must accept inputs from the user about the physical specifications of a fish and return an output of what breed of fish the user might have.
+		\item F1.2 The application must be able to return the most probable fish given the inputs of the user.
+		\item F1.3 The application must allow the user to submit their catch results from fishing.
 	\end{itemize}
+	\textbf{View Point #2:} Google Maps
+	\textbf{Requirements:}
+	\begin{itemize}
+		\item F1.4 The application must be able to access the user's geolocation.
+	\end{itemize}
+	
 
 	\noindent\textbf{Business Event \#2:} \\
 	\textbf{Description:} The user requests lake statistics. \\
-	\textbf{Persons Involved:} The User, Google Maps \\
+	\textbf{View Point #1:} The User \\
 	\textbf{Requirements:}
 	\begin{itemize}
 		\item F2.1 The application must recieve up to date information regarding each specified lake.
-		\item F2.2 The application must be able to access the user's geolocation.
-		\item F2.3 The application must show the user the statistics for each lake specified.
+		\item F2.2 The application must show the user the statistics for each lake specified.
+	\end{itemize}
+	\textbf{View Point #2:} Google Maps
+	\textbf{Requirements:}
+	\begin{itemize}
+		\item See F1.4
 	\end{itemize}
 
 	\noindent\textbf{Business Event \#3:} \\
 	\textbf{Description:} The user requests to add a caught fish to the system. \\
-	\textbf{Persons Involved:} The User, Google Maps \\
+	\textbf{View Point #1:} The User \\
 	\textbf{Requirements:}
 	\begin{itemize}
-		\item F3.1 The application must be able to access the user's geolocation.
-		\item F3.2 The application must be able to show accepted fish per lake.
-		\item F3.3 The application must recieve choice of fish from the user.
-		\item F3.4 The application must allow the user to submit their catch results from fishing.
+		\item F3.1 The application must be able to show accepted fish per lake.
+		\item F3.2 The application must recieve choice of fish from the user.
+		\item F3.3 The application must allow the user to submit their catch results from fishing.
+	\end{itemize}
+	\textbf{View Point #2:} Google Maps
+	\textbf{Requirements:}
+	\begin{itemize}
+		\item See F1.4
+	\end{itemize}
+
+	\noindent\textbf{Business Event \#4:} \\
+	\textbf{Description:} The Sytem Administrator changes the current Experts of the system. \\
+	\textbf{View Point #1:} Sytem Administrator \\
+	\textbf{Requirements:}
+	\begin{itemize}
+		\item The system must allow the addition of Experts
+		\item The system must allow the deletion of Experts
+		\item The system must allow updating of existing Experts
 	\end{itemize}
 
 
@@ -189,7 +223,7 @@ There are currently no requirements that will be delayed until the future.
 \subsubsection{Appearance Requirements}
 The Identifisher application must have an attractive design and look professional with a 70\% satisfaction rate among users concerning the appearance of the application.
 \subsubsection{Style Requirements}
-The Identifisher application must have a simple design to promote usability. This is to ensure a small learning curve for users.
+The Identifisher application must have a simple design to promote usability.
 
 \subsection{Usability and Humanity Requirements}
 \subsubsection{Ease of Use Requirements}
@@ -197,23 +231,25 @@ The IdentiFisher application must be easy to use by people of ages 10 and above.
 \subsubsection{Personalization and Internationalization Requirements}
 The IdentiFisher application must have English language support.
 \subsubsection{Learning Requirements}
-The IdentiFisher application must be easy to learn by people of ages 10 and above. Users should take no longer than five minutes in order to familiarize themselves with the application.
+\begin{itemize}
+	\item The IdentiFisher application must be easy to learn by people of ages 10 and above. 
+	\item Users should take no longer than five minutes in order to familiarize themselves with the application.
+\end{itemize}
 \subsubsection{Understandability and Politeness Requirements}
-The IdentiFisher application must contain no offensive language.
+The IdentiFisher application must contain no language that can be deemed offensive by the general public. This should not include curse words, political propoganda or racial slurs.
 \subsubsection{Accessibility Requirements}
-The IdentiFisher application must be usable by at least 95\% of people with acceptable vision.
+The IdentiFisher application must be usable by at least 95\% of people with acceptable vision. Acceptable vision would be anyone who is acceptable to drive.
 \subsection{Performance Requirements}
 \subsubsection{Speed and Latency Requirements}
 The IdentiFisher application must respond to basic user input within less than 5 seconds.
 \subsubsection{Safety-Critical Requirements}
-The IdentiFisher application must be safe to use with a 0\% mortality rate.
+The IdentiFisher application must be safe to use with less than a 1\% injury rate.
 \subsubsection{Precision or Accuracy Requirements}
-The IdentiFisher application must produce correct identifications 75\% of the time provided the input is reasonably dependable.
+The IdentiFisher application must produce correct identifications 75\% of the time.
 \subsubsection{Reliability and Availability Requirements}
-The IdentiFisher application must be operational and responsive 100\% of the time, except during maintenance or update procedures.
+The IdentiFisher application must be operational and responsive more than 95\% of the time, except during maintenance or update procedures.
 \subsubsection{Robustness or Fault-Tolerance Requirements}
-The IdentiFisher application must produce correct identifications 60\% of the time in high-noise environments. This could include
-ambigous attributes, low light pictures, and small resolution images.
+The IdentiFisher application must produce correct identifications 60\% of the time in high-noise environments.
 \subsubsection{Capacity Requirements}
 The IdentiFisher application must be able to be used for 1 image or query at a time, for more than 95\% of users.
 \subsubsection{Scalability or Extensiblity Requirements}
@@ -255,7 +291,7 @@ The IdentiFisher application must store a back-up copy of information regarding 
 \subsubsection{Cultural Requirements}
 The IdentiFisher application must not be offensive towards any culture.
 \subsubsection{Political Requirements}
-The IdentiFisher application must not have any political affiliation or influence.
+The IdentiFisher application will utilize the Google Maps API.
 
 \subsection{Legal Requirements}
 \subsubsection{Compliance Requirements}

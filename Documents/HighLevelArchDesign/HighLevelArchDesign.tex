@@ -83,32 +83,19 @@ This section should provide a use case diagram for your application.
 This section should provide an analysis class diagram for your application.
 % End Section
 
-
 \section{Architectural Design}
 \label{sec:architectural_design}
-% Begin Section
-This section should provide an overview of the overall architectural design of your application. You overall architecture should show the division of the system into subsystems with high cohesion and low coupling.
+This section will outline a detailed description of the whole architecture system. This will incude, but is not limited to, the name of the design, benefits of the design as well as a justification of the choice and enough detail to implement the design.
 
 \subsection{System Architecture}
 \label{sub:system_architecture}
-% Begin SubSection
-\begin{enumerate}[a)]
-	\item Identify and explain the overall architecture of your system
-	\item Be sure to clearly state the name of the architecture
-	\item Provide the reasoning and justification of the choice
-	\item Provide a structural architecture diagram showing the relationship among the subsystems (if appropriate)
-\end{enumerate}
-% End SubSection
+This system will mainly consist of front-end modules, processors and entities. 
+The front-end modules will consist of every view of the Android application. They will handle all the input from the User and output from the application. After accepting valid input from the User, the application will send that data to the processors. The processors will consist of the Experts and ExpertManager. They will process this information while querying the entities for information. The entities will consist of the Database used to store all information regarding Users and Fish. After the processors are finished with the Entities, the ExpertManager will return the processed information to the front-end modules to be displayed. The front-end modules will then display the information to the User and wait for more input. Due to this process, we will be using a Black Board Architecture Style. The reasoning behind the choice is that all the Experts are contributing to a single and complex problem. With a Black Board style, all Experts can contribute as much as possible so the ExpertManager can make the best decision. Within the system, the ExpertManager will play the role of both the Blackboard and Controller and the Experts will play the role of the knowledge source.
+
+ADD DRAW.IO DRAWING 
 
 \subsection{Subsystems}
 \label{sub:subsystems}
-% Begin SubSection
-\begin{enumerate}[a)]
-	\item Provide a brief description of each subsystem. Be sure to document its purpose and relationship to other subsystems.
-\end{enumerate}
-% End SubSection
-
-% End Section
 	
 \section{Class Responsibility Collaboration (CRC) Cards}
 \label{sec:class_responsibility_collaboration_crc_cards}
@@ -143,8 +130,7 @@ This section should contain all of your CRC cards.
  \hline
  Name & Labour & Signature              \\ \hline
  Shani & Introduction I & \\ 
- Chris & Class Responsibility Charts &  \\
- James & Architecture Design &  \\ 
+ Chris & Class Responsibility Charts \& Architecture Design &  \\
  Ocean & Analysis Class Diagram &  \\ 
  Tian & Use Case Diagram & \\ 
  \hline
