@@ -96,6 +96,14 @@ ADD DRAW.IO DRAWING
 
 \subsection{Subsystems}
 \label{sub:subsystems}
+This section serves the purpose of breaking each subsystem down and outlining the actions, responsiblites and expectations of each subsystem. Ordered with respect to level of abstraction, the following sections represent broad groupings each class will fall into. The following groups are as follows.
+\subsubsection{Front End Modules}
+These modules are majorly responsible for the I/O of the application. Without these being functional, it would be impossible for the User to interact with our application. It consists of all views in the Android Manifest, and every element each view contains. It will preform minor data verification, provide ease of communication and display an attractive, functional interface. The whole system depends on these modules to provide valuable, correct information so that it can process the information accordingly. 
+\subsubsection{Processors \& Controllers}
+These modules are majorly responsible for the relay, delivery and preocessing of all the information going through the application. Without these being functional, the front-end modules would have no way of communicating to the data sources. It will preform the majority of the data verification, querying the database and formatting the data returned.
+\subsubsection{Data Source}
+These modules are majorly repsonsible for holding all of the information in the application. This is necessary in order to use any information given by the User. It will preform organization, maintaining and intrgrity of the information. 
+}
 	
 \section{Class Responsibility Collaboration (CRC) Cards}
 \label{sec:class_responsibility_collaboration_crc_cards}
