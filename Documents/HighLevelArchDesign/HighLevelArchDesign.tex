@@ -16,9 +16,9 @@
 
 % Header and Footer
 %------------------------------------------------------------------------------
-\pagestyle{plain}  
-\renewcommand\headrulewidth{0.4pt}                                      
-\renewcommand\footrulewidth{0.4pt}                                    
+\pagestyle{plain}
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
 %------------------------------------------------------------------------------
 
 % Title Details
@@ -58,8 +58,8 @@ This section will give a detailed description of what to expect from the entire 
 \begin{enumerate}[a)]
 	\item
 	The purpose of this document is to present the high-level architectural design of the IdentiFisher Android application introduced in the Software Specification Requirements document. This will be accomplished using various diagrams and textual descriptions.
-	\item 
-	The intended audience for this document includes any stakeholders involved in the project or interested in the application. This document is especially intended for any person on the project development team who will have a role in the design and implementation of the application and may also include investors, managers, or future users of the application who wish to see the high-level design of the application.  
+	\item
+	The intended audience for this document includes any stakeholders involved in the project or interested in the application. This document is especially intended for any person on the project development team who will have a role in the design and implementation of the application and may also include investors, managers, or future users of the application who wish to see the high-level design of the application.
 \end{enumerate}
 % End SubSection
 
@@ -67,15 +67,15 @@ This section will give a detailed description of what to expect from the entire 
 \label{sub:system_description}
 % Begin SubSection
 \begin{enumerate}[]
-	\item 
-	The system described in this document is called IdentiFisher, an Android application intended to be used by beginner to experienced fishers. IdentiFisher accepts user input about a fish that they have caught and attempts to identify the type based on specific details about the physical appearance and geolocation of the fish. The application will interface with an online mapping system in order to obtain geolocational information and will maintain a data collection of fish caught in specific locations in order to generate catch-rate and other statistics that will be available to users of the application upon request. 
+	\item
+	The system described in this document is called IdentiFisher, an Android application intended to be used by beginner to experienced fishers. IdentiFisher accepts user input about a fish that they have caught and attempts to identify the type based on specific details about the physical appearance and geolocation of the fish. The application will interface with an online mapping system in order to obtain geolocational information and will maintain a data collection of fish caught in specific locations in order to generate catch-rate and other statistics that will be available to users of the application upon request.
 \end{enumerate}
 % End SubSection
 
 \subsection{Overview}
 \label{sub:overview}
 % Begin SubSection
-	The beginning of this document has introduced the purpose of the document and has given a brief outline of IdentiFisher, the system being designed. The subsequent sections will go into detail about the uses and high-level design of the application. First of all, a Use Case Diagram will be presented with a description of the uses of the application. Next, an Analysis Class Diagram will be included in order to show the general organization of the application's classes. The fourth section will provide an overview of the architectural design of the application, including a Structural Architecture Diagram as well as a description of any subsystems. The fifth section will be comprised of Class Responsibility Collaboration (CRC) Cards that will outline the responsibilities and collaborators for each class identified. Finally, a Division of Labour section is included in this document in order to identify each author along with the portion so the document that they have completed. 
+	The beginning of this document has introduced the purpose of the document and has given a brief outline of IdentiFisher, the system being designed. The subsequent sections will go into detail about the uses and high-level design of the application. First of all, a Use Case Diagram will be presented with a description of the uses of the application. Next, an Analysis Class Diagram will be included in order to show the general organization of the application's classes. The fourth section will provide an overview of the architectural design of the application, including a Structural Architecture Diagram as well as a description of any subsystems. The fifth section will be comprised of Class Responsibility Collaboration (CRC) Cards that will outline the responsibilities and collaborators for each class identified. Finally, a Division of Labour section is included in this document in order to identify each author along with the portion so the document that they have completed.
 % End SubSection
 
 % End Section
@@ -83,16 +83,18 @@ This section will give a detailed description of what to expect from the entire 
 \section{Use Case Diagram}
 \label{sec:use_case_diagram}
 % Begin Section
-This section should provide a use case diagram for your application. 
+This section should provide a use case diagram for your application.
 \begin{enumerate}[a)]
-	\item Each use case appearing in the diagram should be accompanied by a text description. 
+	\item Each use case appearing in the diagram should be accompanied by a text description.
 \end{enumerate}
 % End Section
 
 \section{Analysis Class Diagram}
 \label{sec:analysis_class_diagram}
 % Begin Section
-This section should provide an analysis class diagram for your application.
+\includegraphics[width=\textwidth]{classAnalysis}
+\\ \\
+All boundary objects are connected to the home boundary object as that is where the users of the application will navigate from. Connected to the home boundary object are the main classes responsible for modifying user profile settings, identifying fish species, adding fish species to lake databases, and finding optimal fishing spaces in lakes. The classes are broken down to their respective control objects responsible for the many different options the users of the application will have access to. Each control object will be connected to their respective database sets which could include the population levels, geolocation, or data about different fish species.
 % End Section
 
 \section{Architectural Design}
@@ -101,29 +103,29 @@ This section will outline a detailed description of the whole architecture syste
 
 \subsection{System Architecture}
 \label{sub:system_architecture}
-This system will mainly consist of front-end modules, processors and entities. 
+This system will mainly consist of front-end modules, processors and entities.
 The front-end modules will consist of every view of the Android application. They will handle all the input from the User and output from the application. After accepting valid input from the User, the application will send that data to the processors. The processors will consist of the Experts and ExpertManager. They will process this information while querying the entities for information. The entities will consist of the Database used to store all information regarding Users and Fish. After the processors are finished with the Entities, the ExpertManager will return the processed information to the front-end modules to be displayed. The front-end modules will then display the information to the User and wait for more input. Due to this process, we will be using a Black Board Architecture Style. The reasoning behind the choice is that all the Experts are contributing to a single and complex problem. With a Black Board style, all Experts can contribute as much as possible so the ExpertManager can make the best decision. Within the system, the ExpertManager will play the role of both the Blackboard and Controller and the Experts will play the role of the knowledge source.
 
-ADD DRAW.IO DRAWING 
+ADD DRAW.IO DRAWING
 
 \subsection{Subsystems}
 \label{sub:subsystems}
 This section serves the purpose of breaking each subsystem down and outlining the actions, responsiblites and expectations of each subsystem. Ordered with respect to level of abstraction, the following sections represent broad groupings each class will fall into. The following groups are as follows.
 \subsubsection{Front End Modules}
-These modules are majorly responsible for the I/O of the application. Without these being functional, it would be impossible for the User to interact with our application. It consists of all views in the Android Manifest, and every element each view contains. It will preform minor data verification, provide ease of communication and display an attractive, functional interface. The whole system depends on these modules to provide valuable, correct information so that it can process the information accordingly. 
+These modules are majorly responsible for the I/O of the application. Without these being functional, it would be impossible for the User to interact with our application. It consists of all views in the Android Manifest, and every element each view contains. It will preform minor data verification, provide ease of communication and display an attractive, functional interface. The whole system depends on these modules to provide valuable, correct information so that it can process the information accordingly.
 \subsubsection{Processors \& Controllers}
 These modules are majorly responsible for the relay, delivery and preocessing of all the information going through the application. Without these being functional, the front-end modules would have no way of communicating to the data sources. It will preform the majority of the data verification, querying the database and formatting the data returned.
 \subsubsection{Data Source}
-These modules are majorly repsonsible for holding all of the information in the application. This is necessary in order to use any information given by the User. It will preform organization, maintaining and intrgrity of the information. 
-	
-\newpage	
+These modules are majorly repsonsible for holding all of the information in the application. This is necessary in order to use any information given by the User. It will preform organization, maintaining and intrgrity of the information.
+
+\newpage
 \section{Class Responsibility Collaboration (CRC) Cards}
 \label{sec:class_responsibility_collaboration_crc_cards}
 
 	\begin{table}[ht]
 		\centering
 		\begin{tabular}{|p{5cm}|p{5cm}|}
-		\hline 
+		\hline
 		 \multicolumn{2}{|l|}{\textbf{Class Name: Home}} \\
 		\hline
 		\textbf{Responsibility:} & \textbf{Collaborators:} \\ \hline
@@ -135,7 +137,7 @@ These modules are majorly repsonsible for holding all of the information in the 
 	\begin{table}[ht]
 		\centering
 		\begin{tabular}{|p{5cm}|p{5cm}|}
-		\hline 
+		\hline
 		 \multicolumn{2}{|l|}{\textbf{Class Name: Settings}} \\
 		\hline
 		\textbf{Responsibility:} & \textbf{Collaborators:} \\ \hline
@@ -147,7 +149,7 @@ These modules are majorly repsonsible for holding all of the information in the 
 	\begin{table}[ht]
 		\centering
 		\begin{tabular}{| l | l |}
-		\hline 
+		\hline
 		 \multicolumn{2}{|l|}{\textbf{Class Name: LookUpLake}} \\
 		\hline
 		\textbf{Responsibility:} & \textbf{Collaborators:} \\ \hline
@@ -160,7 +162,7 @@ These modules are majorly repsonsible for holding all of the information in the 
 	\begin{table}[ht]
 		\centering
 		\begin{tabular}{|p{5cm}|p{5cm}|}
-		\hline 
+		\hline
 		 \multicolumn{2}{|l|}{\textbf{Class Name: IdentiFisher}} \\
 		\hline
 		\textbf{Responsibility:} & \textbf{Collaborators:} \\ \hline
@@ -168,11 +170,11 @@ These modules are majorly repsonsible for holding all of the information in the 
 		\hline
 		\end{tabular}
 	\end{table}~\\
-	
+
 	\begin{table}[ht]
 		\centering
 		\begin{tabular}{|p{5cm}|p{5cm}|}
-		\hline 
+		\hline
 		 \multicolumn{2}{|l|}{\textbf{Class Name: ExpertManager}} \\
 		\hline
 		\textbf{Responsibility:} & \textbf{Collaborators:} \\ \hline
@@ -184,7 +186,7 @@ These modules are majorly repsonsible for holding all of the information in the 
 	\begin{table}[ht]
 		\centering
 		\begin{tabular}{|p{5cm}|p{5cm}|}
-		\hline 
+		\hline
 		 \multicolumn{2}{|l|}{\textbf{Class Name: Forum}} \\
 		\hline
 		\textbf{Responsibility:} & \textbf{Collaborators:} \\ \hline
@@ -197,7 +199,7 @@ These modules are majorly repsonsible for holding all of the information in the 
 	\begin{table}[ht]
 		\centering
 		\begin{tabular}{|p{5cm}|p{5cm}|}
-		\hline 
+		\hline
 		 \multicolumn{2}{|l|}{\textbf{Class Name: Expert}} \\
 		\hline
 		\textbf{Responsibility:} & \textbf{Collaborators:} \\
@@ -210,7 +212,7 @@ These modules are majorly repsonsible for holding all of the information in the 
 	\begin{table}[ht]
 		\centering
 		\begin{tabular}{|p{5cm}|p{5cm}|}
-		\hline 
+		\hline
 		 \multicolumn{2}{|l|}{\textbf{Class Name: Database}} \\
 		\hline
 		\textbf{Responsibility:} & \textbf{Collaborators:} \\
@@ -225,13 +227,13 @@ These modules are majorly repsonsible for holding all of the information in the 
 \label{sec:division_of_labour}
 % Begin Section
 \begin{center}
-\begin{tabular}{ |c|c|c| } 
+\begin{tabular}{ |c|c|c| }
  \hline
  Name & Labour & Signature              \\ \hline
- Shani & Introduction I & \\ 
+ Shani & Introduction I & \\
  Chris & Class Responsibility Charts \& Architecture Design &  \\
- Ocean & Analysis Class Diagram &  \\ 
- Tian & Use Case Diagram & \\ 
+ Ocean & Analysis Class Diagram &  \\
+ Tian & Use Case Diagram & \\
  \hline
 \end{tabular}
 \end{center}
