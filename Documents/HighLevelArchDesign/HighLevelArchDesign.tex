@@ -50,9 +50,7 @@ Revision 0: This is the first draft written from the authors listed on the Title
 
 \section{Introduction}
 \label{sec:introduction}
-% Begin Section
-
-This section should provide a brief overview of the entire document.
+This section will give a detailed description of what to expect from the entire document. This will clear any assumptions, prior knowledge and any other improtant information that the reader should now prior to reading this document.
 
 \subsection{Purpose}
 \label{sub:purpose}
@@ -118,6 +116,7 @@ These modules are majorly responsible for the relay, delivery and preocessing of
 \subsubsection{Data Source}
 These modules are majorly repsonsible for holding all of the information in the application. This is necessary in order to use any information given by the User. It will preform organization, maintaining and intrgrity of the information. 
 	
+\newpage	
 \section{Class Responsibility Collaboration (CRC) Cards}
 \label{sec:class_responsibility_collaboration_crc_cards}
 
@@ -125,15 +124,101 @@ These modules are majorly repsonsible for holding all of the information in the 
 		\centering
 		\begin{tabular}{|p{5cm}|p{5cm}|}
 		\hline 
-		 \multicolumn{2}{|l|}{\textbf{Class Name:}} \\
+		 \multicolumn{2}{|l|}{\textbf{Class Name: Home}} \\
+		\hline
+		\textbf{Responsibility:} & \textbf{Collaborators:} \\ \hline
+		 This Class is part of the Front End Modules and carries all the responsibilities associated with that. These include handling all of the information coming from the User and displaying information to the User. This class in particular will be a hub to direct the User to the other Front End Modules. This class should be welcoming, as it is the first thing the User will interact with.& It will collaborate with all the other Front End Modules. This is because it will provide the means for getting to the other modules. These include Settings, Look Up Lake and IdentiFisher. \\
+		\hline
+		\end{tabular}
+	\end{table}~\\
+
+	\begin{table}[ht]
+		\centering
+		\begin{tabular}{|p{5cm}|p{5cm}|}
+		\hline 
+		 \multicolumn{2}{|l|}{\textbf{Class Name: Settings}} \\
+		\hline
+		\textbf{Responsibility:} & \textbf{Collaborators:} \\ \hline
+		 This Class is part of the Front End Modules and carries all the responsibilities associated with that. These include handling all of the information coming from the User and displaying information to the User. This class in particular will be a hub to change any settings the User has that they have permissions for. & It will collaborate with the other Front End Modules and the Database. It needs to provide a means for getting to the other modules and change any settings that exist in the Database. \\
+		\hline
+		\end{tabular}
+	\end{table}~\\
+
+	\begin{table}[ht]
+		\centering
+		\begin{tabular}{| l | l |}
+		\hline 
+		 \multicolumn{2}{|l|}{\textbf{Class Name: LookUpLake}} \\
+		\hline
+		\textbf{Responsibility:} & \textbf{Collaborators:} \\ \hline
+		This Class is part of the Front End Modules and carries all the responsibilities associated with that. These include handling all of the information coming from the User and displaying information to the User. This class in particular will be a hub to look up statistics for Fish that exist in a chosen lake. & It will collaborate with the other Front End Modules and the Database. It needs to provide a means for getting to the other modules and query the Database for information regarding each Lake. \\
+		\hline
+		\end{tabular}
+	\end{table}~\\
+	\pagebreak
+
+	\begin{table}[ht]
+		\centering
+		\begin{tabular}{|p{5cm}|p{5cm}|}
+		\hline 
+		 \multicolumn{2}{|l|}{\textbf{Class Name: IdentiFisher}} \\
+		\hline
+		\textbf{Responsibility:} & \textbf{Collaborators:} \\ \hline
+		This Class is part of the Front End Modules and carries all the responsibilities associated with that. These include handling all of the information coming from the User and displaying information to the User. This class in particular will be a hub to recieve information from the User regarding a Fish they want to identify. & It will collaborate with the other Front End Modules and the Processors. It needs to provide a means for getting to the other modules and send the information the User has provided to the Processors ina useful way while maintaining integrity. \\
+		\hline
+		\end{tabular}
+	\end{table}~\\
+	
+	\begin{table}[ht]
+		\centering
+		\begin{tabular}{|p{5cm}|p{5cm}|}
+		\hline 
+		 \multicolumn{2}{|l|}{\textbf{Class Name: ExpertManager}} \\
+		\hline
+		\textbf{Responsibility:} & \textbf{Collaborators:} \\ \hline
+		The ExpertManager is part of the Processors and carries all the responsibilities associated with that. These include handling data verification and relaying information. This class in particular will get information from the IdentiFisher and update the Forum in a meaningful and accurate way. After the Forum has decided what the Fish is, the ExpertManager must read the Forum and relay the information back to the IndentiFisher class. & This class will work with the Forum and IdentiFisher.\\
+		\hline
+		\end{tabular}
+	\end{table}~\\
+
+	\begin{table}[ht]
+		\centering
+		\begin{tabular}{|p{5cm}|p{5cm}|}
+		\hline 
+		 \multicolumn{2}{|l|}{\textbf{Class Name: Forum}} \\
+		\hline
+		\textbf{Responsibility:} & \textbf{Collaborators:} \\ \hline
+		The Forum is an Entity/Processor Class and has most of the responsiblites for each type of class. The Forum will be updated by the ExpertManager which & \\
+		\hline
+		\end{tabular}
+	\end{table}~\\
+	\pagebreak
+
+	\begin{table}[ht]
+		\centering
+		\begin{tabular}{|p{5cm}|p{5cm}|}
+		\hline 
+		 \multicolumn{2}{|l|}{\textbf{Class Name: Expert}} \\
 		\hline
 		\textbf{Responsibility:} & \textbf{Collaborators:} \\
 		\hline
 		\vspace{1in} & \\
 		\hline
 		\end{tabular}
-	\end{table}
-	
+	\end{table}~\\
+
+	\begin{table}[ht]
+		\centering
+		\begin{tabular}{|p{5cm}|p{5cm}|}
+		\hline 
+		 \multicolumn{2}{|l|}{\textbf{Class Name: Database}} \\
+		\hline
+		\textbf{Responsibility:} & \textbf{Collaborators:} \\
+		\hline
+		\vspace{1in} & \\
+		\hline
+		\end{tabular}
+	\end{table}~\\
 
 \appendix
 \section{Division of Labour}
@@ -150,28 +235,7 @@ These modules are majorly repsonsible for holding all of the information in the 
  \hline
 \end{tabular}
 \end{center}
-% End Section
 
 \newpage
-\section*{IMPORTANT NOTES}
-\begin{itemize}
-%	\item You do \underline{NOT} need to provide a text explanation of each diagram; the diagram should speak for itself
-	\item Please document any non-standard notations that you may have used
-	\begin{itemize}
-		\item \emph{Rule of Thumb}: if you feel there is any doubt surrounding the meaning of your notations, document them
-	\end{itemize}
-	\item Some diagrams may be difficult to fit into one page
-	\begin{itemize}
-		\item It is OK if the text is small but please ensure that it is readable when printed
-		\item If you need to break a diagram onto multiple pages, please adopt a system of doing so and thoroughly explain how it can be reconnected from one page to the next; if you are unsure about this, please ask about it
-	\end{itemize}
-	\item Please submit the latest version of Deliverable 1 with Deliverable 2
-	\begin{itemize}
-		\item It does not have to be a freshly printed version; the latest marked version is OK
-	\end{itemize}
-	\item If you do \underline{NOT} have a Division of Labour sheet, your deliverable will \underline{NOT} be marked
-\end{itemize}
-
 
 \end{document}
-%------------------------------------------------------------------------------
