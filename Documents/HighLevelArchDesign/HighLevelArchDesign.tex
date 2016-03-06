@@ -51,7 +51,7 @@ Revision 0: This is the first draft written from the authors listed on the Title
 
 \section{Introduction}
 \label{sec:introduction}
-This section will give a detailed description of what to expect from the entire document. This will clear any assumptions, prior knowledge and any other improtant information that the reader should now prior to reading this document.
+This section will give a detailed description of what to expect from the entire document. This will cover any assumptions, prior knowledge, and any other important information that the reader should know prior to reading this document.
 
 \subsection{Purpose}
 \label{sub:purpose}
@@ -76,7 +76,7 @@ This section will give a detailed description of what to expect from the entire 
 \subsection{Overview}
 \label{sub:overview}
 % Begin SubSection
-	The beginning of this document has introduced the purpose of the document and has given a brief outline of IdentiFisher, the system being designed. The subsequent sections will go into detail about the uses and high-level design of the application. First of all, a Use Case Diagram will be presented with a description of the uses of the application. Next, an Analysis Class Diagram will be included in order to show the general organization of the application's classes. The fourth section will provide an overview of the architectural design of the application, including a Structural Architecture Diagram as well as a description of any subsystems. The fifth section will be comprised of Class Responsibility Collaboration (CRC) Cards that will outline the responsibilities and collaborators for each class identified. Finally, a Division of Labour section is included in this document in order to identify each author along with the portion so the document that they have completed.
+	The beginning of this document has introduced the purpose of the document and has given a brief outline of IdentiFisher, the system being designed. The subsequent sections will go into detail about the uses and high-level design of the application. First of all, a Use Case Diagram will be presented with a description of the uses of the application. Next, an Analysis Class Diagram will be included in order to show the general organization of the application's classes. The fourth section will provide an overview of the architectural design of the application, including a Structural Architecture Diagram as well as a description of any subsystems. The fifth section will be comprised of Class Responsibility Collaboration (CRC) Cards that will outline the responsibilities and collaborators for each class identified. Finally, a Division of Labour section is included in this document in order to identify each author along with the portion of the document that they have completed.
 % End SubSection
 
 % End Section
@@ -91,20 +91,20 @@ This section will give a detailed description of what to expect from the entire 
 
 \FloatBarrier
 
-The following are drief descriptions of the Use Cases displayed above:
+The following are brief descriptions of the Use Cases displayed above:
 \begin{itemize}
 \item \textbf{Input properties of fish:} \\
-The user will be inputing the following attributes: Colour, Pattern, Place, and/or shape to the expert manager.
+The user will be inputting the following attributes: Colour, pattern, place, and/or shape to the expert manager.
 \item \textbf{Consult with experts:} \\
-The expert manager will put the attributes to a forum(blackboard). Experts will each grab their respective attributes to identify the fish.
+The expert manager will input the attributes to a forum(blackboard). Experts will each grab their respective attributes to identify the fish.
 \item \textbf{Search possible fish based on Data:} \\
-The experts will look within the database to find possible fish that fits the attribute.
+The experts will look within the database to find possible fish that fits the attributes.
 \item \textbf{Record found fish of database:} \\
-The manager can choose to report found fish to a database of the application. Other users may see the percentage chance of this type of fish found.
+The manager can choose to report found fish to the database of the application. Other users may view an estimate of the chances of finding this type of fish.
 \item \textbf{Return sorted list of possible fish:} \\
-A sorted list of possible fishes from most to least probable will be returned to forum.
+A sorted list of possible fishes from most to least probable will be returned to the forum.
 \item \textbf{Find fish on google maps:} \\
-Application may also display locations where this type of fish can be found.
+The application may also display locations where this type of fish can be found.
 \item \textbf{Display results:} \\
 The returned result will be displayed to the user.
 \end{itemize}
@@ -125,7 +125,7 @@ All boundary objects are connected to the home boundary object as that is where 
 
 \section{Architectural Design}
 \label{sec:architectural_design}
-This section will outline a detailed description of the whole architecture system. This will incude, but is not limited to, the name of the design, benefits of the design as well as a justification of the choice and enough detail to implement the design.
+This section will outline a detailed description of the whole architecture system. This will include, but is not limited to, the name of the design, benefits of the design as well as a justification of the choice and enough detail to implement the design.
 
 \subsection{System Architecture}
 \label{sub:system_architecture}
@@ -145,9 +145,9 @@ This section serves the purpose of breaking each subsystem down and outlining th
 \subsubsection{Front End Modules}
 These modules are majorly responsible for the I/O of the application. Without these being functional, it would be impossible for the User to interact with our application. It consists of all views in the Android Manifest, and every element each view contains. It will preform minor data verification, provide ease of communication and display an attractive, functional interface. The whole system depends on these modules to provide valuable, correct information so that it can process the information accordingly.
 \subsubsection{Processors \& Controllers}
-These modules are majorly responsible for the relay, delivery and preocessing of all the information going through the application. Without these being functional, the front-end modules would have no way of communicating to the data sources. It will preform the majority of the data verification, querying the database and formatting the data returned.
+These modules are majorly responsible for the relay, delivery and processing of all the information going through the application. Without these being functional, the front-end modules would have no way of communicating to the data sources. It will preform the majority of the data verification, querying the database and formatting the data returned.
 \subsubsection{Data Source}
-These modules are majorly repsonsible for holding all of the information in the application. This is necessary in order to use any information given by the User. It will preform organization, maintaining and intrgrity of the information.
+These modules are majorly repsonsible for holding all of the information in the application. This is necessary in order to use any information given by the User. It will perform organization, maintainance and ensure integrity of the information.
 
 \section{Class Responsibility Collaboration (CRC) Cards}
 \label{sec:class_responsibility_collaboration_crc_cards}
@@ -219,7 +219,7 @@ These modules are majorly repsonsible for holding all of the information in the 
 		 \multicolumn{2}{|l|}{\textbf{Class Name: Forum}} \\
 		\hline
 		\textbf{Responsibility:} & \textbf{Collaborators:} \\ \hline
-		The Forum is an Entity/Processor Class and has most of the responsiblites for each type of class. The Forum will be updated by the ExpertManager which will allow the Experts to each add as much useful information to the problem being solved. Once the Forum has recieved all the information, it can be read by the ExpertManager to decide on a unique Fish. & This Class should be accesible only to the Experts and ExpertManagers. \\
+		The Forum is an Entity/Processor Class and has most of the responsiblites for each type of class. The Forum will be updated by the ExpertManager which will allow the Experts to each add as much useful information to the problem being solved. Once the Forum has recieved all the information, it can be read by the ExpertManager to decide on a unique Fish. & This Class should be accessible only to the Experts and ExpertManagers. \\
 		\hline
 		\end{tabular}
 	\end{table}
@@ -231,7 +231,7 @@ These modules are majorly repsonsible for holding all of the information in the 
 		 \multicolumn{2}{|l|}{\textbf{Class Name: Expert}} \\
 		\hline
 		\textbf{Responsibility:} & \textbf{Collaborators:} \\ \hline
-		This class consists of many classes of Experts which are Control classes each with a seperate and unique domain of expertise. The main responsibility is to read the Forum, gather information from it and return the most probable Fish that is attempting to be identified. Each Expert will work independently of the others. & These classes will all work seperately with the Forum. \\
+		This class consists of many classes of Experts which are Control classes each with a separate and unique domain of expertise. The main responsibility is to read the Forum, gather information from it and return the most probable Fish that is attempting to be identified. Each Expert will work independently of the others. & These classes will all work separately with the Forum. \\
 		\hline
 		\end{tabular}
 	\end{table}
