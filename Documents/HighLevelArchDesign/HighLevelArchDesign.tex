@@ -24,7 +24,7 @@
 
 % Title Details
 %------------------------------------------------------------------------------
-\title{High Level Architecture Design: \\ \textit{IndentiFisher} \\ An Android Application \\}
+\title{High Level Architecture Design: \\ \textit{IdentiFisher} \\ An Android Application \\}
 \author{
 \Large McDonald, Christopher\\
 \texttt{1312456} \\ \\
@@ -94,15 +94,15 @@ This section will give a detailed description of what to expect from the entire 
 The following are brief descriptions of the Use Cases displayed above:
 \begin{itemize}
 \item \textbf{Input properties of fish:} \\
-The user will be inputting the following attributes: Colour, pattern, place, and/or shape to the expert manager.
+The user inputs the following attributes: Colour, pattern, place, and/or shape to the expert manager.
 \item \textbf{Consult with experts:} \\
-The expert manager will input the attributes to a forum(blackboard). Experts will each grab their respective attributes to identify the fish.
+The expert manager inputs the attributes to a forum(blackboard). Experts will each grab their respective attributes to identify the fish.
 \item \textbf{Search possible fish based on Data:} \\
-The experts will look within the database to find possible fish that fits the attributes.
+The experts query the database to find possible fish that fit the attributes.
 \item \textbf{Record found fish of database:} \\
 The manager can choose to report found fish to the database of the application. Other users may view an estimate of the chances of finding this type of fish.
 \item \textbf{Return sorted list of possible fish:} \\
-A sorted list of possible fishes from most to least probable will be returned to the forum.
+A sorted list of possible fish from most to least probable will be returned to the forum.
 \item \textbf{Find fish on google maps:} \\
 The application may also display locations where this type of fish can be found.
 \item \textbf{Display results:} \\
@@ -129,8 +129,8 @@ This section will outline a detailed description of the whole architecture syste
 
 \subsection{System Architecture}
 \label{sub:system_architecture}
-This system will mainly consist of front-end modules, processors and entities.
-The front-end modules will consist of every view of the Android application. They will handle all the input from the User and output from the application. After accepting valid input from the User, the application will send that data to the processors. The processors will consist of the Experts and ExpertManager. They will process this information while querying the entities for information. The entities will consist of the Database used to store all information regarding Users and Fish. After the processors are finished with the Entities, the ExpertManager will return the processed information to the front-end modules to be displayed. The front-end modules will then display the information to the User and wait for more input. Due to this process, we will be using a Black Board Architecture Style. The reasoning behind the choice is that all the Experts are contributing to a single and complex problem. With a Black Board style, all Experts can contribute as much as possible so the ExpertManager can make the best decision. Within the system, the ExpertManager will play the role of both the Blackboard and Controller and the Experts will play the role of the knowledge source.
+This system will mainly consist of front end modules, processors, and entities.
+The front end modules will consist of every view of the Android application. They will handle all the input from the user and output from the application. After accepting valid input from the user, the application will send that data to the processors. The processors will consist of the Experts and ExpertManager. They will process this information while querying the entities for information. The entities will consist of the Database used to store all information regarding the users and fish. After the processors are finished with the entities, the ExpertManager will return the processed information to the front end modules to be displayed. The front end modules will then display the information to the user and wait for more input. Due to this process, we will be using a Blackboard Architecture Style. The reasoning behind the choice is that all the experts are contributing to a single and complex problem. With a blackboard style architecture, all Expert modules can contribute as much as possible so the ExpertManager can make the best decision. Within the system, the ExpertManager will play the role of both the blackboard and controller, and the Expert modules will play the role of the knowledge source.
 
 \begin{figure}
 \includegraphics[width=\textwidth]{ArchDesign}
@@ -143,11 +143,11 @@ The front-end modules will consist of every view of the Android application. The
 \label{sub:subsystems}
 This section serves the purpose of breaking each subsystem down and outlining the actions, responsiblites and expectations of each subsystem. Ordered with respect to level of abstraction, the following sections represent broad groupings each class will fall into. The following groups are as follows.
 \subsubsection{Front End Modules}
-These modules are majorly responsible for the I/O of the application. Without these being functional, it would be impossible for the User to interact with our application. It consists of all views in the Android Manifest, and every element each view contains. It will preform minor data verification, provide ease of communication and display an attractive, functional interface. The whole system depends on these modules to provide valuable, correct information so that it can process the information accordingly.
+These modules are majorly responsible for the input and output of the application. Without these being functional, it would be impossible for the user to interact with the application. It consists of all views in the Android Manifest and every element each view contains. It will perform minor data verification, provide ease of communication, and display an attractive, functional interface. The whole system depends on these modules to provide valuable, correct information so that it can process the information accordingly.
 \subsubsection{Processors \& Controllers}
-These modules are majorly responsible for the relay, delivery and processing of all the information going through the application. Without these being functional, the front-end modules would have no way of communicating to the data sources. It will preform the majority of the data verification, querying the database and formatting the data returned.
+These modules are majorly responsible for the relay, delivery, and processing of all the information going through the application. Without these being functional, the front end modules would have no way of communicating to the data sources. It will perform the majority of the data verification, querying the database, and formatting the data returned.
 \subsubsection{Data Source}
-These modules are majorly repsonsible for holding all of the information in the application. This is necessary in order to use any information given by the User. It will perform organization, maintainance and ensure integrity of the information.
+These modules are majorly responsible for holding all of the information in the application. This is necessary in order to use any information given by the user. It will perform organization, maintainance, and ensure the integrity of the information.
 
 \section{Class Responsibility Collaboration (CRC) Cards}
 \label{sec:class_responsibility_collaboration_crc_cards}
@@ -159,7 +159,7 @@ These modules are majorly repsonsible for holding all of the information in the 
 		 \multicolumn{2}{|l|}{\textbf{Class Name: Home}} \\
 		\hline
 		\textbf{Responsibility:} & \textbf{Collaborators:} \\ \hline
-		 This Class is part of the Front End Modules and carries all the responsibilities associated with that. These include handling all of the information coming from the User and displaying information to the User. This class in particular will be a hub to direct the User to the other Front End Modules. This class should be welcoming, as it is the first thing the User will interact with.& It will collaborate with all the other Front End Modules. This is because it will provide the means for getting to the other modules. These include Settings, Look Up Lake and IdentiFisher. \\
+		 This class is part of the front end modules and carries all the responsibilities associated with that. The responsibilities include handling all of the information coming from the user and displaying information to the user. This class in particular will be a hub to direct the user to the other front end modules. This class should be welcoming as it is the first thing the user will interact with.& It will collaborate with all the other front end modules. This is because it will provide the means for getting to the other modules. These include Settings, Look Up Lake and IdentiFisher. \\
 		\hline
 		\end{tabular}
 	\end{table}
@@ -171,7 +171,7 @@ These modules are majorly repsonsible for holding all of the information in the 
 		 \multicolumn{2}{|l|}{\textbf{Class Name: Settings}} \\
 		\hline
 		\textbf{Responsibility:} & \textbf{Collaborators:} \\ \hline
-		 This Class is part of the Front End Modules and carries all the responsibilities associated with that. These include handling all of the information coming from the User and displaying information to the User. This class in particular will be a hub to change any settings the User has that they have permissions for. & It will collaborate with the other Front End Modules and the Database. It needs to provide a means for getting to the other modules and change any settings that exist in the Database. \\
+		 This class is part of the front end modules and carries all the responsibilities associated with that. These include handling all of the information coming from the user and displaying information to the user. This class in particular will be a hub to change any settings the user has that they have permissions for. & It will collaborate with the other front end modules and the Database. It needs to provide a means for getting to the other modules and change any settings that exist in the Database. \\
 		\hline
 		\end{tabular}
 	\end{table}
@@ -183,7 +183,7 @@ These modules are majorly repsonsible for holding all of the information in the 
 		 \multicolumn{2}{|l|}{\textbf{Class Name: LookUpLake}} \\
 		\hline
 		\textbf{Responsibility:} & \textbf{Collaborators:} \\ \hline
-		This Class is part of the Front End Modules and carries all the responsibilities associated with that. These include handling all of the information coming from the User and displaying information to the User. This class in particular will be a hub to look up statistics for Fish that exist in a chosen lake. & It will collaborate with the other Front End Modules and the Database. It needs to provide a means for getting to the other modules and query the Database for information regarding each Lake. \\
+		This class is part of the front end modules and carries all the responsibilities associated with that. These include handling all of the information coming from the user and displaying information to the user. This class in particular will be a hub to look up statistics for fish that exist in a chosen lake. & It will collaborate with the other front end modules as well as the Database. It needs to provide a means for getting to the other modules and must be able to query the Database for information regarding each lake. \\
 		\hline
 		\end{tabular}
 	\end{table}
@@ -195,7 +195,7 @@ These modules are majorly repsonsible for holding all of the information in the 
 		 \multicolumn{2}{|l|}{\textbf{Class Name: IdentiFisher}} \\
 		\hline
 		\textbf{Responsibility:} & \textbf{Collaborators:} \\ \hline
-		This Class is part of the Front End Modules and carries all the responsibilities associated with that. These include handling all of the information coming from the User and displaying information to the User. This class in particular will be a hub to recieve information from the User regarding a Fish they want to identify. & It will collaborate with the other Front End Modules and the Processors. It needs to provide a means for getting to the other modules and send the information the User has provided to the Processors ina useful way while maintaining integrity. \\
+		This class is part of the front end modules and carries all the responsibilities associated with that. These include handling all of the information coming from the user and displaying information to the user. This class in particular will be a hub to receive information from the user regarding a fish they would like to identify. & It will collaborate with the other front end modules and the processors. It needs to provide a means for getting to the other modules as well as send the information the user has provided to the processors in a useful way while maintaining data integrity. \\
 		\hline
 		\end{tabular}
 	\end{table}
@@ -207,7 +207,7 @@ These modules are majorly repsonsible for holding all of the information in the 
 		 \multicolumn{2}{|l|}{\textbf{Class Name: ExpertManager}} \\
 		\hline
 		\textbf{Responsibility:} & \textbf{Collaborators:} \\ \hline
-		The ExpertManager is part of the Processors and carries all the responsibilities associated with that. These include handling data verification and relaying information. This class in particular will get information from the IdentiFisher and update the Forum in a meaningful and accurate way. After the Forum has decided what the Fish is, the ExpertManager must read the Forum and relay the information back to the IndentiFisher class. & This class will work with the Forum and IdentiFisher.\\
+		The ExpertManager is part of the processors and carries all the responsibilities associated with that. These include handling data verification and relaying information. This class in particular will get information from the IdentiFisher and update the Forum in a meaningful and accurate way. After the Forum has estimated what type of fish has been queried, the ExpertManager must read the Forum and relay the information back to the IdentiFisher class. & This class will work with the Forum and IdentiFisher.\\
 		\hline
 		\end{tabular}
 	\end{table}
@@ -219,7 +219,7 @@ These modules are majorly repsonsible for holding all of the information in the 
 		 \multicolumn{2}{|l|}{\textbf{Class Name: Forum}} \\
 		\hline
 		\textbf{Responsibility:} & \textbf{Collaborators:} \\ \hline
-		The Forum is an Entity/Processor Class and has most of the responsiblites for each type of class. The Forum will be updated by the ExpertManager which will allow the Experts to each add as much useful information to the problem being solved. Once the Forum has recieved all the information, it can be read by the ExpertManager to decide on a unique Fish. & This Class should be accessible only to the Experts and ExpertManagers. \\
+		The Forum is an entity/processor class and has most of the responsiblites for each type of class. The Forum will be updated by the ExpertManager which will allow the Expert modules to each add useful information to the problem being solved. Once the Forum has received all the information, it can be read by the ExpertManager to decide on a unique fish. & This class should be accessible only to the Expert and ExpertManager. \\
 		\hline
 		\end{tabular}
 	\end{table}
@@ -231,7 +231,7 @@ These modules are majorly repsonsible for holding all of the information in the 
 		 \multicolumn{2}{|l|}{\textbf{Class Name: Expert}} \\
 		\hline
 		\textbf{Responsibility:} & \textbf{Collaborators:} \\ \hline
-		This class consists of many classes of Experts which are Control classes each with a separate and unique domain of expertise. The main responsibility is to read the Forum, gather information from it and return the most probable Fish that is attempting to be identified. Each Expert will work independently of the others. & These classes will all work separately with the Forum. \\
+		This class consists of many classes of Expert classes which are considered control classes, each bearing a separate and unique domain of expertise. The main responsibility is to read the Forum, gather information from it, and return the most probable fish that is attempting to be identified. Each Expert will work independently of the others. & These classes will all work separately with the Forum. \\
 		\hline
 		\end{tabular}
 	\end{table}
@@ -244,7 +244,7 @@ These modules are majorly repsonsible for holding all of the information in the 
 		\hline
 		\textbf{Responsibility:} & \textbf{Collaborators:} \\
 		\hline
-		This class is an overall Entity class which holds all the information the application needs to hold. This can hold User information, Fish information and statistics regarding Lakes and the fish they contain. It is responsible for receiving, searching and relaying information in a meaningful way while maintaining integrity. & These Classes will work with all the other Classes that need to get information that the particular Class will hold. \\
+		This class is an overall entity class which holds all the information the application needs to hold. This can hold user information, fish information, and statistics regarding lakes and the fish they contain. It is responsible for receiving, searching, and relaying information in a meaningful way while maintaining data integrity. & These classes will work with all other classes that need to get information that a particular class may hold. \\
 		\hline
 		\end{tabular}
 	\end{table}
@@ -259,7 +259,7 @@ These modules are majorly repsonsible for holding all of the information in the 
 \begin{tabular}{ |c|c|c| }
  \hline
  Name & Labour & Signature              \\ \hline
- Shani & Introduction I & \\
+ Shani & Introduction & \\
  Chris & Class Responsibility Charts \& Architecture Design &  \\
  Ocean & Analysis Class Diagram &  \\
  Tian & Use Case Diagram & \\
