@@ -1,0 +1,38 @@
+Innovative Features:
+	Database to track fish catch rates
+	Warning of Endangered Species
+
+User Interfaces:
+
+	Home/Landing Page:
+		- 4 Buttons for each page
+		- Title
+		- Relevant Text for Info/Direction/...etc
+
+	Look Up Lake:
+		- Text input for Location OR GPS
+		- Button "Send"
+		- TextView to handle multiple "<Fish Name> --- % Catch Rate"
+
+	Identify: (Ocean)
+		- 3 Inputs (Color, Pattern, Shape)
+		- Location (Similar to Look Up Lake 1)
+		- Button to Send
+		- Alert Box with option to Cycle through 3 most likely or "Add Fish to Database"
+	Settings: (Ocean)
+		-  Default Lake
+		- Dark/Light/Color Theme Option
+
+	Add Fish:
+		- Drop Down List of Fish
+		- Lake caught at
+		- Picutre Capture
+
+SQL Tools (Chris)
+	Make Connections, Tables, Queries...
+
+Getting Info (Shani)
+	Gather information on Color, Shape, Pattern
+	Cite Sources!
+
+
