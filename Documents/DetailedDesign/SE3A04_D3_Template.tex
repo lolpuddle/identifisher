@@ -34,40 +34,29 @@
 \maketitle	
 
 \newpage
+
+\tableofcontents
+\vfill
+Revision 0: This is the first draft written from the authors listed on the Title page.
+\pagebreak
 \section{Introduction}
 \label{sec:introduction}
-% Begin Section
-
-This section should provide an brief overview of the entire document.
 
 \subsection{Purpose}
 \label{sub:purpose}
-% Begin SubSection
-\begin{enumerate}[a)]
-	\item Delineate the purpose of the document
-	\item Specify the intended audience for the document
-\end{enumerate}
-% End SubSection
+
+This document is the third, and final documentation which outlines the details of the ineficaion application IdentiFisher. This document specifically will provide ample detail into the components of the application so that a person with the appropriate expertise could implement it. These details will include the processes of the application, the life cycle of each component and what is expected or required from them. \\
+This document is crucial for the project managers and programmers as there will be heavy detail on how the application will execute. However, it is also important for all stakeholders to read this document because of their involvement in the success of the application. These stakeholders should be making sure the application is aligning with the goals and aspirations it had always intended, and provide guidance when necessary.
 
 \subsection{System Description}
 \label{sub:system_description}
-% Begin SubSection
-\begin{enumerate}[a)]
-	\item Give a brief description of the system. This could be a paragraph or two to give some context to this document.
-\end{enumerate}
-% End SubSection
+
+This system is an Android Application, running on the most up to date Android operating system, Android \textit{Marshmellow}. It will provide the service of indentifying the type of fish a User is describing, when given a required set of criteria. Additional features included tracking the fish that users has caught with the geolocation they are at as well as providing warnings to users if the fish is potentially dangerous or endangered. This requires text input from the user, as well as GPS functionality from the smartphone. Given the information we are holding, we also provide the service to users to look up data for each geolocation they provide. This application will be very easy to use, as fishing can involve varying level of intensity and should be available in all of these times.
 
 \subsection{Overview}
 \label{sub:overview}
-% Begin SubSection
-\begin{enumerate}[a)]
-	\item Describe what the rest of the document contains 
-	\item Explain how the document is organised
-\end{enumerate}
 
-% End SubSection
-
-% End Section
+This documents contains varying levels of detailed design components the implementation must have. The first section to note is Section \ref{sec:state_charts_for_controller_classes} which is the State Charts for Controller Classes. This will be a state machine to describe the action, outputs and states for each Controller class in the application. For reference, the Controller classes can be found in the High Level Architecure Design document. These will be useful to outline how the system acts when given an input during a particular time. Continuing from there in Section \ref{sec:sequence_diagrams} is the Sequence Diagrams. This section is a major aspect of the life cycle of the application in its entirety and also the sub compenents of the application. This diagram will show when processes are started, when they end and what messages or actions are sent between them. This part is crucial to the synchronous aspects of the application. Lastly in Section \ref{sec:detailed_class_diagram} is the Detailed Class Diagram which will take each Class required for the implentation of the program and go into great detail about it. This will include the inputs, resources, expectations and outputs of each class. Moreover, the attributes and methods each class will need should be outlined as well.
 
 \section{State Charts for Controller Classes}
 \label{sec:state_charts_for_controller_classes}
@@ -96,8 +85,8 @@ This section should provide a detailed class diagram for your application.
  \hline
  Name & Labour & Signature \\ \hline
  Shani & Sequence Diagrams & \\
- Chris &  &  \\
- Ocean &  &  \\
+ Chris & Introduction  &  \\
+ Ocean &  Detailed Class Diagram &  \\
  Tian & State Charts for Controller Classes & \\
  \hline
 \end{tabular}
