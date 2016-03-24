@@ -46,6 +46,7 @@
 \tableofcontents
 \vfill
 Revision 0: This is the first draft written from the authors listed on the Title page.
+Revision 1: Use Case Diagram, Analysis Diagram, CRC Cards
 \pagebreak
 
 \section{Introduction}
@@ -158,7 +159,9 @@ These modules are majorly responsible for holding all of the information in the 
 		 \multicolumn{2}{|l|}{\textbf{Class Name: Home}} \\
 		\hline
 		\textbf{Responsibility:} & \textbf{Collaborators:} \\ \hline
-		 This class is part of the front end modules and carries all the responsibilities associated with that. The responsibilities include handling all of the information coming from the user and displaying information to the user. This class in particular will be a hub to direct the user to the other front end modules. This class should be welcoming as it is the first thing the user will interact with.& It will collaborate with all the other front end modules. This is because it will provide the means for getting to the other modules. These include Settings, Look Up Lake and IdentiFisher. \\
+		 This class is part of the front end modules and carries all the responsibilities associated with that. The responsibilities include handling all of the information coming from the user and displaying information to the user. This class in particular will be a hub to direct the user to the other front end modules.
+
+		 & It will collaborate with all the other front end modules, which include Add Fish, Look Up Lake and IdentiFisher.  \\
 		\hline
 		\end{tabular}
 	\end{table}
@@ -167,10 +170,10 @@ These modules are majorly responsible for holding all of the information in the 
 		\centering
 		\begin{tabular}{|p{5cm}|p{5cm}|}
 		\hline
-		 \multicolumn{2}{|l|}{\textbf{Class Name: Settings}} \\
+		 \multicolumn{2}{|l|}{\textbf{Class Name: Add Fish}} \\
 		\hline
 		\textbf{Responsibility:} & \textbf{Collaborators:} \\ \hline
-		 This class is part of the front end modules and carries all the responsibilities associated with that. These include handling all of the information coming from the user and displaying information to the user. This class in particular will be a hub to change any settings the user has that they have permissions for. & It will collaborate with the other front end modules and the Database. It needs to provide a means for getting to the other modules and change any settings that exist in the Database. \\
+		 This class is part of the front end modules and carries all the responsibilities associated with that. These include handling all of the information coming from the user and displaying information to the user. This class in particular will provide the means of allowing the User to add a fish they have caught and can identify to the database. It should also be able to direct the user back to the Home page. & This class will work with the Home class, Database class and Location class. \\
 		\hline
 		\end{tabular}
 	\end{table}
@@ -182,7 +185,7 @@ These modules are majorly responsible for holding all of the information in the 
 		 \multicolumn{2}{|l|}{\textbf{Class Name: LookUpLake}} \\
 		\hline
 		\textbf{Responsibility:} & \textbf{Collaborators:} \\ \hline
-		This class is part of the front end modules and carries all the responsibilities associated with that. These include handling all of the information coming from the user and displaying information to the user. This class in particular will be a hub to look up statistics for fish that exist in a chosen lake. & It will collaborate with the other front end modules as well as the Database. It needs to provide a means for getting to the other modules and must be able to query the Database for information regarding each lake. \\
+		This class is part of the front end modules and carries all the responsibilities associated with that. These include handling all of the information coming from the user and displaying information to the user. This class in particular will be a location to look up statistics for fish that exist in a chosen lake. & It will collaborate with the Home, Database and Location class.  \\
 		\hline
 		\end{tabular}
 	\end{table}
@@ -194,7 +197,7 @@ These modules are majorly responsible for holding all of the information in the 
 		 \multicolumn{2}{|l|}{\textbf{Class Name: IdentiFisher}} \\
 		\hline
 		\textbf{Responsibility:} & \textbf{Collaborators:} \\ \hline
-		This class is part of the front end modules and carries all the responsibilities associated with that. These include handling all of the information coming from the user and displaying information to the user. This class in particular will be a hub to receive information from the user regarding a fish they would like to identify. & It will collaborate with the other front end modules and the processors. It needs to provide a means for getting to the other modules as well as send the information the user has provided to the processors in a useful way while maintaining data integrity. \\
+		This class is part of the front end modules and carries all the responsibilities associated with that. These include handling all of the information coming from the user and displaying information to the user. This class in particular will be a hub to receive information from the user regarding a fish they would like to identify. It will then send this information to the ExpertManager for further processing. It must display the returned results from the ExpertManager as well. & This class will work with the ExpertManager, Location and Home classes. \\
 		\hline
 		\end{tabular}
 	\end{table}
@@ -206,19 +209,7 @@ These modules are majorly responsible for holding all of the information in the 
 		 \multicolumn{2}{|l|}{\textbf{Class Name: ExpertManager}} \\
 		\hline
 		\textbf{Responsibility:} & \textbf{Collaborators:} \\ \hline
-		The ExpertManager is part of the processors and carries all the responsibilities associated with that. These include handling data verification and relaying information. This class in particular will get information from the IdentiFisher and update the Forum in a meaningful and accurate way. After the Forum has estimated what type of fish has been queried, the ExpertManager must read the Forum and relay the information back to the IdentiFisher class. & This class will work with the Forum and IdentiFisher.\\
-		\hline
-		\end{tabular}
-	\end{table}
-
-	\begin{table}[ht]
-		\centering
-		\begin{tabular}{|p{5cm}|p{5cm}|}
-		\hline
-		 \multicolumn{2}{|l|}{\textbf{Class Name: Forum}} \\
-		\hline
-		\textbf{Responsibility:} & \textbf{Collaborators:} \\ \hline
-		The Forum is an entity/processor class and has most of the responsiblites for each type of class. The Forum will be updated by the ExpertManager which will allow the Expert modules to each add useful information to the problem being solved. Once the Forum has received all the information, it can be read by the ExpertManager to decide on a unique fish. & This class should be accessible only to the Expert and ExpertManager. \\
+		The ExpertManager is a processor class which receives data from the Identifisher class. This information will contain details of the fish the User is tring to identify. It must process this information and send it to the appropriate expert. It will then recieve and consult the recommendations from the experts. After making a decision, it will send the most likely fish back to the Identifisher class. & This class will work with the Experts and IdentiFisher class.\\
 		\hline
 		\end{tabular}
 	\end{table}
@@ -230,7 +221,7 @@ These modules are majorly responsible for holding all of the information in the 
 		 \multicolumn{2}{|l|}{\textbf{Class Name: Expert}} \\
 		\hline
 		\textbf{Responsibility:} & \textbf{Collaborators:} \\ \hline
-		This class consists of many classes of Expert classes which are considered control classes, each bearing a separate and unique domain of expertise. The main responsibility is to read the Forum, gather information from it, and return the most probable fish that is attempting to be identified. Each Expert will work independently of the others. & These classes will all work separately with the Forum. \\
+		This class consists of many classes of Expert classes which are considered control classes, each bearing a separate and unique domain of expertise. The main responsibility is to recieve information from the ExpertManager and consult their area of expertise to return the highest probable fish. Each Expert will work independently of the others. & These classes will all work with the ExpertManager and Database. \\
 		\hline
 		\end{tabular}
 	\end{table}
@@ -243,7 +234,7 @@ These modules are majorly responsible for holding all of the information in the 
 		\hline
 		\textbf{Responsibility:} & \textbf{Collaborators:} \\
 		\hline
-		This class is an overall entity class which holds all the information the application needs to hold. This can hold user information, fish information, and statistics regarding lakes and the fish they contain. It is responsible for receiving, searching, and relaying information in a meaningful way while maintaining data integrity. & These classes will work with all other classes that need to get information that a particular class may hold. \\
+		This class is an overall entity class which holds all the information the application needs to hold. This can hold user information, fish information, and statistics regarding lakes and the fish they contain. It is responsible for receiving, searching, and relaying information in a meaningful way while maintaining data integrity. & This classes will work with the Experts, Add Fish and Look Up Lake classes. \\
 		\hline
 		\end{tabular}
 	\end{table}
