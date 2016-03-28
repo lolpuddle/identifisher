@@ -1,3 +1,8 @@
-\contentsline {figure}{\numberline {1}{\ignorespaces Sequence Diagram: Fish Identification}}{4}
-\contentsline {figure}{\numberline {2}{\ignorespaces Sequence Diagram: Look up Body of Water Statistics}}{5}
-\contentsline {figure}{\numberline {3}{\ignorespaces Sequence Diagram: Add Self-Identified Fish to Database}}{6}
+\contentsline {figure}{\numberline {1}{\ignorespaces State Chart: ViewController}}{4}
+\contentsline {figure}{\numberline {2}{\ignorespaces State Chart: GeoLocation}}{4}
+\contentsline {figure}{\numberline {3}{\ignorespaces State Chart: Expert Manager}}{5}
+\contentsline {figure}{\numberline {4}{\ignorespaces State Chart: Expert}}{5}
+\contentsline {figure}{\numberline {5}{\ignorespaces Sequence Diagram: Fish Identification}}{6}
+\contentsline {figure}{\numberline {6}{\ignorespaces Sequence Diagram: Look up Body of Water Statistics}}{7}
+\contentsline {figure}{\numberline {7}{\ignorespaces Sequence Diagram: Add Self-Identified Fish to Database}}{8}
+\contentsline {figure}{\numberline {8}{\ignorespaces Sequence Diagram: Update Experts)}}{9}

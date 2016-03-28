@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  23 MAR 2016 09:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  27 MAR 2016 20:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -192,21 +192,59 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks30
 \@floatcapt=\box29
 )
-No file SE3A04_D3_Template.aux.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tocloft/tocloft.sty
+Package: tocloft 2013/05/02 v2.3f parameterised ToC, etc., typesetting
+Package tocloft Info: The document has section divisions on input line 44.
+\cftparskip=\skip58
+\cftbeforetoctitleskip=\skip59
+\cftaftertoctitleskip=\skip60
+\cftbeforepartskip=\skip61
+\cftpartnumwidth=\skip62
+\cftpartindent=\skip63
+\cftbeforesecskip=\skip64
+\cftsecindent=\skip65
+\cftsecnumwidth=\skip66
+\cftbeforesubsecskip=\skip67
+\cftsubsecindent=\skip68
+\cftsubsecnumwidth=\skip69
+\cftbeforesubsubsecskip=\skip70
+\cftsubsubsecindent=\skip71
+\cftsubsubsecnumwidth=\skip72
+\cftbeforeparaskip=\skip73
+\cftparaindent=\skip74
+\cftparanumwidth=\skip75
+\cftbeforesubparaskip=\skip76
+\cftsubparaindent=\skip77
+\cftsubparanumwidth=\skip78
+\cftbeforeloftitleskip=\skip79
+\cftafterloftitleskip=\skip80
+\cftbeforefigskip=\skip81
+\cftfigindent=\skip82
+\cftfignumwidth=\skip83
+\c@lofdepth=\count104
+\c@lotdepth=\count105
+\cftbeforelottitleskip=\skip84
+\cftafterlottitleskip=\skip85
+\cftbeforetabskip=\skip86
+\cfttabindent=\skip87
+\cfttabnumwidth=\skip88
+)
+(./SE3A04_D3_Template.aux)
 \openout1 = `SE3A04_D3_Template.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -243,16 +281,16 @@ LaTeX Font Info:    ... okay on input line 35.
 
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count104
+\scratchcounter=\count106
 \scratchdimen=\dimen122
 \scratchbox=\box30
-\nofMPsegments=\count105
-\nofMParguments=\count106
+\nofMPsegments=\count107
+\nofMParguments=\count108
 \everyMPshowfont=\toks31
-\MPscratchCnt=\count107
+\MPscratchCnt=\count109
 \MPscratchDim=\dimen123
-\MPnumerator=\count108
-\makeMPintoPDFobject=\count109
+\MPnumerator=\count110
+\makeMPintoPDFobject=\count111
 \everyMPtoPDFconversion=\toks32
 ) (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -298,101 +336,106 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 36.
+LaTeX Font Info:    Try loading font information for U+msa on input line 37.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 36.
+LaTeX Font Info:    Try loading font information for U+msb on input line 37.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-No file SE3A04_D3_Template.toc.
+(./SE3A04_D3_Template.toc)
 \tf@toc=\write3
 \openout3 = `SE3A04_D3_Template.toc'.
 
-[2]
+ [2]
+<images/ViewController.png, id=16, 640.3925pt x 388.45125pt>
+File: images/ViewController.png Graphic file (type png)
 
-LaTeX Warning: Reference `sec:state_charts_for_controller_classes' on page 3 un
-defined on input line 61.
+<use images/ViewController.png>
+Package pdftex.def Info: images/ViewController.png used on input line 68.
+(pdftex.def)             Requested size: 469.75502pt x 284.9481pt.
 
+<images/GeoLocation.png, id=18, 779.91376pt x 283.0575pt>
+File: images/GeoLocation.png Graphic file (type png)
 
-LaTeX Warning: Reference `sec:sequence_diagrams' on page 3 undefined on input l
-ine 61.
+<use images/GeoLocation.png>
+Package pdftex.def Info: images/GeoLocation.png used on input line 72.
+(pdftex.def)             Requested size: 469.75502pt x 170.48798pt.
+ [3]
+<images/ExpertManager.png, id=23, 197.73875pt x 353.32pt>
+File: images/ExpertManager.png Graphic file (type png)
 
+<use images/ExpertManager.png>
+Package pdftex.def Info: images/ExpertManager.png used on input line 77.
+(pdftex.def)             Requested size: 234.8775pt x 419.68507pt.
 
-LaTeX Warning: Reference `sec:detailed_class_diagram' on page 3 undefined on in
-put line 61.
+<images/Expert.png, id=24, 805.0075pt x 94.3525pt>
+File: images/Expert.png Graphic file (type png)
+ <use images/Expert.png>
+Package pdftex.def Info: images/Expert.png used on input line 82.
+(pdftex.def)             Requested size: 469.75502pt x 55.05849pt.
 
-<images/sequence1.png, id=15, 721.69624pt x 637.38126pt>
+[4 <./images/ViewController.png> <./images/GeoLocation.png>]
+<images/sequence1.png, id=30, 1201.48875pt x 1044.90375pt>
 File: images/sequence1.png Graphic file (type png)
 
 <use images/sequence1.png>
-Package pdftex.def Info: images/sequence1.png used on input line 74.
-(pdftex.def)             Requested size: 505.18393pt x 446.16383pt.
-
-Overfull \hbox (35.42891pt too wide) in paragraph at lines 74--75
-[][] 
- []
-
-<images/sequence2.png, id=17, 883.3pt x 607.26875pt>
+Package pdftex.def Info: images/sequence1.png used on input line 91.
+(pdftex.def)             Requested size: 469.75502pt x 408.53123pt.
+ [5 <./images/ExpertManager.png> <./images/Expert.png>] <images/sequence2.png, 
+id=36, 723.70375pt x 547.04375pt>
 File: images/sequence2.png Graphic file (type png)
 
 <use images/sequence2.png>
-Package pdftex.def Info: images/sequence2.png used on input line 78.
-(pdftex.def)             Requested size: 529.9841pt x 364.36406pt.
+Package pdftex.def Info: images/sequence2.png used on input line 95.
+(pdftex.def)             Requested size: 469.75502pt x 355.09007pt.
 
-Overfull \hbox (60.22908pt too wide) in paragraph at lines 78--79
-[][] 
- []
-
-[3] <images/sequence3.png, id=23, 883.3pt x 607.26875pt>
+<images/sequence3.png, id=37, 848.16875pt x 426.59375pt>
 File: images/sequence3.png Graphic file (type png)
 
 <use images/sequence3.png>
-Package pdftex.def Info: images/sequence3.png used on input line 82.
-(pdftex.def)             Requested size: 529.9841pt x 364.36406pt.
+Package pdftex.def Info: images/sequence3.png used on input line 99.
+(pdftex.def)             Requested size: 469.75502pt x 236.26762pt.
+ [6 <./images/sequence1.png>]
+<images/sequence4.png, id=42, 251.94125pt x 224.84pt>
+File: images/sequence4.png Graphic file (type png)
 
-Overfull \hbox (60.22908pt too wide) in paragraph at lines 82--83
-[][] 
- []
-
-[4 <./images/sequence1.png>] [5 <./images/sequence2.png>]
-No file SE3A04_D3_Template.lof.
+<use images/sequence4.png>
+Package pdftex.def Info: images/sequence4.png used on input line 103.
+(pdftex.def)             Requested size: 469.75502pt x 419.22731pt.
+ [7 <./images/sequence2.png>] [8 <./images/sequence3.png>] (./SE3A04_D3_Templat
+e.lof)
 \tf@lof=\write4
 \openout4 = `SE3A04_D3_Template.lof'.
 
-[6 <./images/sequence3.png>] (./SE3A04_D3_Template.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+ [9 <./images/sequence4.png>] [10]
+(./SE3A04_D3_Template.aux) ) 
 Here is how much of TeX's memory you used:
- 3228 strings out of 493089
- 43783 string characters out of 6134842
- 111643 words of memory out of 5000000
- 6646 multiletter control sequences out of 15000+600000
+ 3513 strings out of 493089
+ 48339 string characters out of 6134842
+ 117494 words of memory out of 5000000
+ 6916 multiletter control sequences out of 15000+600000
  12365 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,7n,43p,1371b,240s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
-usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
-r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/
-local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/l
-ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/lo
-cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on SE3A04_D3_Template.pdf (6 pages, 168991 bytes).
+ 38i,7n,43p,1371b,260s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmti12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmtt12.pfb>
+Output written on SE3A04_D3_Template.pdf (10 pages, 263054 bytes).
 PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
- 39 compressed objects within 1 object stream
+ 86 PDF objects out of 1000 (max. 8388607)
+ 49 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
