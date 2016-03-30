@@ -1,11 +1,16 @@
 <resources>
     <string name="app_name">IdentiFisher</string>
-    <string name="action_settings">Settings</string>
 
     <string-array name="fishColor">
         <item>Blue</item>
         <item>Red</item>
         <item>Orange</item>
+    </string-array>
+
+    <string-array name="fishShape">
+        <item>Long</item>
+        <item>Short</item>
+        <item>Wide</item>
     </string-array>
 
     <string-array name="fishPattern">
@@ -14,9 +19,10 @@
         <item>Wavy</item>
     </string-array>
 
-    <string-array name="fishShape">
-        <item>Long</item>
-        <item>Short</item>
-        <item>Wide</item>
+    <string-array name="fishSelection">
+        <item>Clownfish</item>
+        <item>Bass</item>
+        <item>Great White Shark</item>
+        <item>Spotted Puffer</item>
     </string-array>
 </resources>

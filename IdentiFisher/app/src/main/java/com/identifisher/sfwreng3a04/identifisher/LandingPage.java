@@ -1,5 +1,6 @@
 package com.identifisher.sfwreng3a04.identifisher;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -44,7 +45,8 @@ public class LandingPage extends AppCompatActivity {
                     int id = v.getId();
                     switch (id) {
                         case(R.id.identifyBtn):
-                            //TODO Go to new page
+                            Intent intent = new Intent(v.getContext(), IdentifyFish.class);
+                            startActivity(intent);
                             break;
                         case(R.id.findLakeBtn):
                             //TODO See above

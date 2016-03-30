@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,52 +7,47 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.identifisher.sfwreng3a04.identifisher.IdentifyFish"
-    >
+    tools:context="com.identifisher.sfwreng3a04.identifisher.IdentifyFish">
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Please enter the following criteria"
-        android:textSize="30dp"
-        android:textAlignment="center"
-        android:id="@+id/identifyFishTitle" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Please Enter the following criteria"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/colorSpinner"
-        android:entries="@array/fishColor"
-        android:layout_below="@+id/identifyFishTitle"
+        android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="48dp" />
+        android:entries="@array/fishColor"
+        android:layout_marginTop="80dp" />
 
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/patternSpinner"
-        android:entries="@array/fishPattern"
         android:layout_below="@+id/colorSpinner"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="48dp" />
+        android:entries="@array/fishPattern"
+        android:layout_centerHorizontal="true" />
 
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/shapeSpinner"
-        android:entries="@array/fishShape"
         android:layout_below="@+id/patternSpinner"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="48dp" />
+        android:entries="@array/fishShape"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/shapeSpinner"
-        android:layout_marginTop="48dp"
-        android:layout_centerHorizontal="true"
-        android:text="IdentiFish!"/>
-
-
+        android:text="Identify!"
+        android:id="@+id/identifyIdentifyPageButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
