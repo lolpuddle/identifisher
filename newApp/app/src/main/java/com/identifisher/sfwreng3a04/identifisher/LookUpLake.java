@@ -28,14 +28,12 @@ public class LookUpLake extends AppCompatActivity {
                         case (R.id.geolocationButton):
                             //TODO find geolocation, return success/failure
                                 //if success, assign it to global variable, fill R.id.geolocationText, let User know
-
                                 //if not, let user it failed
                             break;
                         case (R.id.lakeLookUpPageButton):
                             //TODO double check we have valid location, return fail if we dont
                             //If we do, query database and return information
                                 //How to return it? As a group we need to decide between pop up or scrollable text?
-
                             break;
                     }
                 }
