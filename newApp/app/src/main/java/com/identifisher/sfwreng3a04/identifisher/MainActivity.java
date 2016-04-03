@@ -1,18 +1,37 @@
 package com.identifisher.sfwreng3a04.identifisher;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
+import sql.DBHelper;
+
 public class MainActivity extends AppCompatActivity {
+    DBHelper mydb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mydb = new DBHelper(this);
+        mydb.insertLake("Lake Ontario");
+        ArrayList<String> ar = mydb.getLakeData(1);
+        Iterator<String>  i = ar.iterator();
+        String s;
+        Log.d("MyApp", "Begin...");
+        while (i.hasNext()) {
+            s = i.next();
+            Log.d("MyApp", s);
+        }
+        Log.d("MyApp", "End...");
         Button[] buttons = {
                 (Button) findViewById(R.id.identifyButton),
                 (Button) findViewById(R.id.lakeLookUpButton),
