@@ -24,13 +24,12 @@ public class MainActivity extends AppCompatActivity {
 
         // Testing Begins!
         mydb = new DBHelper(this);
-        mydb.insertFish("Goldfishy", "Golden", "Roundish", "Patterned");
-        String[][] s = mydb.getAllFishInformation();
+        ExpertManager expertManager = new ExpertManager(mydb);
+        String[] info = {" \"silver\""," \"elongated\""," \"striped\""};
+        String[] fishes = expertManager.identifyThis(info);
         Log.d("Test","Begin...");
-        for(String[] s1 : s) {
-            for(String s2 : s1) {
-                Log.d("MyApp",s2);
-            }
+        for(String a : fishes) {
+            Log.d("Test",a);
         }
         Log.d("Test", "End...");
         //  Testing Ends.. :(

@@ -1,6 +1,7 @@
 package com.identifisher.sfwreng3a04.identifisher;
 
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -20,9 +21,12 @@ public class ColorExpert extends Expert {
     @Override
     public String[] getFish(String data) {
         String[][] info = extractColor(database.getAllFishInformation());
+
         ArrayList<String> possibleFish = new ArrayList<String>();
         for (String[] row : info) {
-            if(row[1].equals(data)) {
+            Log.d("ColorExpert","Comparing..." + row[1] + " to " + data);
+            if(row[1].compareTo(data) == 0) {
+                Log.d("ColorExpert",row[0] + " is possible..");
                 possibleFish.add(row[0]);
             }
         }

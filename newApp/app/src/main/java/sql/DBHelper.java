@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import com.identifisher.sfwreng3a04.identifisher.InitialDatabase;
+
 import java.util.ArrayList;
 
 /**
@@ -21,6 +23,9 @@ public class DBHelper extends SQLiteOpenHelper {
     *       fishNames - Table to hold solely Fish Info
     *                   Contains: ID - Number
     *                             Name - String
+    *                             Color - String
+    *                             Pattern - String
+    *                             Shape - String
     *
     *       lakeAndFish - Table to hold number of Fish per Lake
     *                   Contains: Lake - Number
@@ -57,7 +62,9 @@ public class DBHelper extends SQLiteOpenHelper {
                 FISH_COLUMN_PATTERN + " varchar(255)," +
                 FISH_COLUMN_SHAPE +" varchar(255))");
         db.execSQL("CREATE TABLE " + FISH_LAKE_TABLE +
-                " (" + FISH_LAKE_COLUMN_LAKE + " integer, " + FISH_LAKE_COLUMN_FISH + " integer " + LAKE_COLUMN_NAME + " integer)");
+                " (" + FISH_LAKE_COLUMN_LAKE + " integer, " + FISH_LAKE_COLUMN_FISH + " integer " + LAKE_COLUMN_NAME + " integer," +
+                "FOREIGN KEY (" + FISH_LAKE_COLUMN_LAKE + ") REFERENCES " + LAKE_TABLE + "(" + LAKE_COLUMN_ID + ")" +
+                "FOREIGN KEY (" + FISH_LAKE_COLUMN_FISH + ") REFERENCES " + FISH_TABLE + "(" + FISH_COLUMN_ID + "))");
     }
 
     @Override
@@ -141,6 +148,7 @@ public class DBHelper extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues();
         contentValues.put(FISH_LAKE_COLUMN_LAKE, lake);
         contentValues.put(FISH_LAKE_COLUMN_FISH, fish);
+        contentValues.put(FISH_LAKE_COLUMN_NUMBER, 0);
         db.insert(FISH_LAKE_TABLE, null, contentValues);
         return true;
     }

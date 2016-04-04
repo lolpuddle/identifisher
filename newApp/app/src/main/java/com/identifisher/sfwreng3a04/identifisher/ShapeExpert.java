@@ -1,6 +1,7 @@
 package com.identifisher.sfwreng3a04.identifisher;
 
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -20,9 +21,12 @@ public class ShapeExpert extends Expert {
     @Override
     public String[] getFish(String data) {
         String[][] info = extractShape(database.getAllFishInformation());
+        Log.d("ShapeExpert", "Beginning Shape Analysis... Looking for " + data);
         ArrayList<String> possibleFish = new ArrayList<String>();
         for (String[] row : info) {
-            if(row[1].equals(data)) {
+            Log.d("ShapeExpert","Comparing..." + row[1] + " to " + data);
+            if(row[1].compareTo(data) == 0) {
+                Log.d("ShapeExpert",row[0] + " is possible..");
                 possibleFish.add(row[0]);
             }
         }
@@ -35,7 +39,7 @@ public class ShapeExpert extends Expert {
         int i = 0;
         for (String[] row : allFishInformation) {
             toReturn[i][0] = row[0];
-            toReturn[i][1] = row[2];
+            toReturn[i][1] = row[1];
             i++;
         }
         return toReturn;

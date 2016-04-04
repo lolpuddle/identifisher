@@ -2,21 +2,21 @@
     <string name="app_name">IdentiFisher</string>
 
     <string-array name="fishColor">
-        <item>Blue</item>
-        <item>Red</item>
-        <item>Orange</item>
+        <item>brown</item>
+        <item>silver</item>
+        <item>yellow</item>
     </string-array>
 
     <string-array name="fishShape">
-        <item>Long</item>
-        <item>Short</item>
+        <item>elongated</item>
+        <item>fusiform</item>
         <item>Wide</item>
     </string-array>
 
     <string-array name="fishPattern">
-        <item>Stripe</item>
-        <item>Spotted</item>
-        <item>Wavy</item>
+        <item>striped</item>
+        <item>spotted</item>
+        <item>speckled</item>
     </string-array>
 
     <string-array name="fishSelection">

@@ -48,6 +48,16 @@
         android:layout_height="wrap_content"
         android:text="Identify!"
         android:id="@+id/identifyIdentifyPageButton"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/shapeSpinner"
         android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Enter the criteria and click the Button for the results"
+        android:id="@+id/fishIdentifiedTextView"
+        android:layout_below="@+id/identifyIdentifyPageButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="77dp" />
 </RelativeLayout>

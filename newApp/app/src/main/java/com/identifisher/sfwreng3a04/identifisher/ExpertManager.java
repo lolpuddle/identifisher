@@ -1,5 +1,7 @@
 package com.identifisher.sfwreng3a04.identifisher;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 
 import sql.DBHelper;
@@ -12,11 +14,12 @@ public class ExpertManager {
     Expert[] experts;
     DBHelper db;
 
-    public ExpertManager() {
+    public ExpertManager(DBHelper dbHelper) {
+        db = dbHelper;
         experts = new Expert[3];
-        experts[0] = new ColorExpert(db);
-        experts[1] = new ShapeExpert(db);
-        experts[2] = new PatternExpert(db);
+        experts[0] = new ColorExpert(dbHelper);
+        experts[1] = new ShapeExpert(dbHelper);
+        experts[2] = new PatternExpert(dbHelper);
     }
 
     /**
@@ -30,6 +33,9 @@ public class ExpertManager {
         int maxCol = 0;
         for (int i = 0; i < experts.length; i++) {
             hold = experts[i].getFish(info[i]);
+            for(String s : hold) {
+                Log.d("ExpertManager",s + " was returned by Expert #" + i);
+            }
             allFish.add(hold);
             if(hold.length > maxCol) maxCol = hold.length;
         }
@@ -60,7 +66,7 @@ public class ExpertManager {
         ArrayList<String> toReturn = new ArrayList<String>();
         for (int i = 0; i < one.length; i++) {
             for (int j = 0; j < two.length; j++) {
-                if(one[i].equals(two[j]) && !toReturn.contains(one[i])) {
+                if(one[i].equals(two[j])) {
                     toReturn.add(one[i]);
                 }
             }
