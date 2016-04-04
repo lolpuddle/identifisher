@@ -251,13 +251,19 @@ public class DBHelper extends SQLiteOpenHelper {
         return Integer.valueOf(r.getString(r.getColumnIndex(FISH_COLUMN_ID)));
     }
 
+    /**
+     *
+     * @return
+     */
     public String[][] getAllFishInformation() {
         SQLiteDatabase rd = this.getReadableDatabase();
-        Cursor allFish = rd.rawQuery("SELECT * FROM " + FISH_TABLE,null);
+        Cursor allFish = rd.rawQuery("SELECT * FROM " + FISH_TABLE, null);
         String[][] toReturn = new String[allFish.getCount()][4];
+        allFish.moveToFirst();
         for(int i = 0; i < toReturn.length; i++) {
-            
+            toReturn[i] = getFishData(Integer.valueOf(allFish.getString(allFish.getColumnIndex(FISH_COLUMN_ID))));
+            allFish.moveToNext();
         }
-        return null;
+        return toReturn;
     }
 }

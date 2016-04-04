@@ -24,16 +24,15 @@ public class MainActivity extends AppCompatActivity {
 
         // Testing Begins!
         mydb = new DBHelper(this);
-        mydb.insertLake("Lake Ontario");
-        mydb.insertFish("Goldfish", "Gold", "Round", "Pattern");
-        mydb.addFishToLake("Lake Ontario", "Goldfish");
-        ArrayList<String> s = mydb.getLakeData("Lake Ontario");
-        Iterator<String> i = s.iterator();
+        mydb.insertFish("Goldfishy", "Golden", "Roundish", "Patterned");
+        String[][] s = mydb.getAllFishInformation();
         Log.d("Test","Begin...");
-        while (i.hasNext()) {
-            Log.d("Test",mydb.getFishName(Integer.valueOf(i.next())));
+        for(String[] s1 : s) {
+            for(String s2 : s1) {
+                Log.d("MyApp",s2);
+            }
         }
-        Log.d("Test","End...");
+        Log.d("Test", "End...");
         //  Testing Ends.. :(
 
         Button[] buttons = {
