@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -21,17 +22,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Testing Begins!
         mydb = new DBHelper(this);
         mydb.insertLake("Lake Ontario");
-        ArrayList<String> ar = mydb.getLakeData(1);
-        Iterator<String>  i = ar.iterator();
-        String s;
-        Log.d("MyApp", "Begin...");
+        mydb.insertFish("Goldfish", "Gold", "Round", "Pattern");
+        mydb.addFishToLake("Lake Ontario", "Goldfish");
+        ArrayList<String> s = mydb.getLakeData("Lake Ontario");
+        Iterator<String> i = s.iterator();
+        Log.d("Test","Begin...");
         while (i.hasNext()) {
-            s = i.next();
-            Log.d("MyApp", s);
+            Log.d("Test",mydb.getFishName(Integer.valueOf(i.next())));
         }
-        Log.d("MyApp", "End...");
+        Log.d("Test","End...");
+        //  Testing Ends.. :(
+
         Button[] buttons = {
                 (Button) findViewById(R.id.identifyButton),
                 (Button) findViewById(R.id.lakeLookUpButton),

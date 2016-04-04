@@ -107,10 +107,7 @@ public class DBHelper extends SQLiteOpenHelper {
      * @return
      */
     public boolean addFishToLake  (String lake, String fish) {
-        SQLiteDatabase dbRead = this.getReadableDatabase();
-        Cursor l = dbRead.rawQuery("SELECT " + LAKE_COLUMN_ID +" FROM " + LAKE_TABLE + " WHERE " + LAKE_COLUMN_NAME + "=" + lake, null);
-        Cursor f = dbRead.rawQuery("SELECT " + LAKE_COLUMN_ID +" FROM " + LAKE_TABLE + " WHERE " + LAKE_COLUMN_NAME + "=" + lake, null);
-        return addFishToLake(Integer.valueOf(l.getString(0)), Integer.valueOf(f.getString(0)));
+        return addFishToLake(getLakeID(lake), getFishID(fish));
     }
 
     /**
@@ -120,9 +117,7 @@ public class DBHelper extends SQLiteOpenHelper {
      * @return
      */
     public boolean addFishToLake  (String lake, int fish) {
-        SQLiteDatabase dbRead = this.getReadableDatabase();
-        Cursor l = dbRead.rawQuery("SELECT " + LAKE_COLUMN_ID +" FROM " + LAKE_TABLE + "WHERE " + LAKE_COLUMN_NAME + "=" + lake, null);
-        return addFishToLake(Integer.valueOf(l.getString(0)), fish);
+        return addFishToLake(getLakeID(lake), fish);
     }
 
     /**
@@ -132,9 +127,7 @@ public class DBHelper extends SQLiteOpenHelper {
      * @return
      */
     public boolean addFishToLake  (int lake, String fish) {
-        SQLiteDatabase dbRead = this.getReadableDatabase();
-        Cursor f = dbRead.rawQuery("SELECT " + LAKE_COLUMN_ID +" FROM " + LAKE_TABLE + "WHERE " + LAKE_COLUMN_NAME + "=" + lake, null);
-        return addFishToLake(lake, Integer.valueOf(f.getString(0)));
+        return addFishToLake(lake, getFishID(fish));
     }
 
     /**
@@ -158,11 +151,7 @@ public class DBHelper extends SQLiteOpenHelper {
      * @return
      */
     public ArrayList getLakeData(String lake) {
-        SQLiteDatabase dbRead = this.getReadableDatabase();
-        ArrayList<String> array_list = new ArrayList<String>();
-        Cursor lakeName = dbRead.rawQuery("SELECT " + LAKE_COLUMN_ID +" FROM " + LAKE_TABLE + " WHERE " + LAKE_COLUMN_NAME + "='" +  lake + "'", null);
-        lakeName.moveToFirst();
-        return getLakeData(Integer.valueOf(lakeName.getString(lakeName.getColumnIndex(LAKE_COLUMN_ID))));
+        return getLakeData(getLakeID(lake));
     }
 
     /**
@@ -178,18 +167,17 @@ public class DBHelper extends SQLiteOpenHelper {
 
         while(l.isAfterLast() == false){
             array_list.add(l.getString(l.getColumnIndex(FISH_LAKE_COLUMN_FISH)));
-            array_list.add(l.getString(l.getColumnIndex(FISH_LAKE_COLUMN_NUMBER)));
             l.moveToNext();
         }
         return array_list;
     }
 
     /**
-     *
-     * @param name
-     * @return
+     *Used to retrieve Fish Data from the Database
+     * @param name - The Name of the Fish being Queried
+     * @return A String array with data in the order of {Name, Shape, Pattern, Color}
      */
-    public ArrayList getFishData (String name) {
+    public String[] getFishData (String name) {
         SQLiteDatabase dbRead = this.getReadableDatabase();
         ArrayList<String[]> array_list = new ArrayList<String[]>();
         Cursor l = dbRead.rawQuery("SELECT * FROM " + FISH_TABLE + " WHERE " + FISH_COLUMN_NAME + "='" + name + "'", null);
@@ -198,26 +186,78 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     /**
-     *
-     * @param fish
-     * @return
+     * Used to retrieve Fish Data from the Database
+     * @param fish - The ID number of the Fish
+     * @return A String array with data in the order of {Name, Shape, Pattern, Color}
      */
-    public ArrayList getFishData(int fish) {
+    public String[] getFishData(int fish) {
         SQLiteDatabase dbRead = this.getReadableDatabase();
-        ArrayList<String[]> array_list = new ArrayList<String[]>();
         Cursor l = dbRead.rawQuery("SELECT * FROM " + FISH_TABLE + " WHERE " + FISH_COLUMN_ID + "=" + fish, null);
         l.moveToFirst();
-        String[] temp = new String[4];
-        while(l.isAfterLast() == false) {
-            temp[0] = (l.getString(l.getColumnIndex(FISH_COLUMN_NAME)));
-            temp[1] = (l.getString(l.getColumnIndex(FISH_COLUMN_SHAPE)));
-            temp[2] = (l.getString(l.getColumnIndex(FISH_COLUMN_PATTERN)));
-            temp[3] = (l.getString(l.getColumnIndex(FISH_COLUMN_COLOR)));
-            array_list.add(temp);
-            l.moveToNext();
-        }
-        return array_list;
+        String[] toReturn = {
+                (l.getString(l.getColumnIndex(FISH_COLUMN_NAME))),
+                (l.getString(l.getColumnIndex(FISH_COLUMN_SHAPE))),
+                (l.getString(l.getColumnIndex(FISH_COLUMN_PATTERN))),
+                (l.getString(l.getColumnIndex(FISH_COLUMN_COLOR)))
+        };
+        return toReturn;
     }
 
+    /**
+     * Used to retrieve the name of the Lake which corresponds to the ID set for it.
+     * @param id - ID number of the Lake
+     * @return A String of the Lake's Name
+     */
+    public String getLakeName(int id) {
+        SQLiteDatabase rd = this.getReadableDatabase();
+        Cursor r = rd.rawQuery("SELECT " + LAKE_COLUMN_NAME + " FROM " + LAKE_TABLE + " WHERE " + LAKE_COLUMN_ID + "=" + id,null);
+        r.moveToFirst();
+        return r.getString(r.getColumnIndex(LAKE_COLUMN_NAME));
+    }
 
+    /**
+     * Used to retrieve the ID of any Lake in the Database
+     * @param name - String of the Name of the Lake
+     * @return The ID number of the lake as an integer
+     */
+    public int getLakeID(String name) {
+        SQLiteDatabase rd = this.getReadableDatabase();
+        Cursor r = rd.rawQuery("SELECT " + LAKE_COLUMN_ID + " FROM " + LAKE_TABLE + " WHERE " + LAKE_COLUMN_NAME + "='" + name + "'",null);
+        r.moveToFirst();
+        return Integer.valueOf(r.getString(r.getColumnIndex(LAKE_COLUMN_ID)));
+    }
+
+    /**
+     *
+     * @param id
+     * @return
+     */
+    public String getFishName(int id) {
+        SQLiteDatabase rd = this.getReadableDatabase();
+        Cursor r = rd.rawQuery("SELECT " + FISH_COLUMN_NAME + " FROM " + FISH_TABLE + " WHERE " + FISH_COLUMN_ID + "=" + id,null);
+        r.moveToFirst();
+        return r.getString(r.getColumnIndex(FISH_COLUMN_NAME));
+    }
+
+    /**
+     *
+     * @param name
+     * @return
+     */
+    public int getFishID(String name) {
+        SQLiteDatabase rd = this.getReadableDatabase();
+        Cursor r = rd.rawQuery("SELECT " + FISH_COLUMN_ID + " FROM " + FISH_TABLE + " WHERE " + FISH_COLUMN_NAME + "='" + name + "'",null);
+        r.moveToFirst();
+        return Integer.valueOf(r.getString(r.getColumnIndex(FISH_COLUMN_ID)));
+    }
+
+    public String[][] getAllFishInformation() {
+        SQLiteDatabase rd = this.getReadableDatabase();
+        Cursor allFish = rd.rawQuery("SELECT * FROM " + FISH_TABLE,null);
+        String[][] toReturn = new String[allFish.getCount()][4];
+        for(int i = 0; i < toReturn.length; i++) {
+            
+        }
+        return null;
+    }
 }
