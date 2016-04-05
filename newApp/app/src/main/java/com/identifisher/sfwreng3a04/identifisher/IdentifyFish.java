@@ -9,6 +9,16 @@ import android.widget.TextView;
 
 import sql.DBHelper;
 
+/**
+ * View Controller Class
+ * This View provides the means of identifying fish for the user using drop down menus and buttons.
+ *
+ * TODO Make Dropdowns populate using AllFishInformation
+ * TODO Add Button to Add A Possible Fish to Lake
+ * TODO Add Dropdown to populate with possible fish
+ *
+ * Author: Christopher McDonald
+ */
 public class IdentifyFish extends AppCompatActivity {
 
     DBHelper db;
@@ -19,23 +29,24 @@ public class IdentifyFish extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_identify_fish);
 
-        Button identify = (Button) findViewById(R.id.identifyIdentifyPageButton);
-        final TextView setForFish = (TextView) findViewById(R.id.fishIdentifiedTextView);
-        final Spinner[] spinners = {
+
+        Button identify = (Button) findViewById(R.id.identifyIdentifyPageButton);           //Button to fire identifying process
+        final TextView setForFish = (TextView) findViewById(R.id.fishIdentifiedTextView);   //A Display to give information for the User, see TODO's
+        final Spinner[] spinners = {                                                        //All Dropdowns with Information filled in R.String, see TODO's
                 (Spinner) findViewById(R.id.colorSpinner),
                 (Spinner) findViewById(R.id.shapeSpinner),
                 (Spinner) findViewById(R.id.patternSpinner)
         };
-        db = new DBHelper(this);
-        expertManager = new ExpertManager(db);
+        db = new DBHelper(this);                                                            //Database to be used
+        expertManager = new ExpertManager(db);                                              //ExpertManager (Forum) to handle indentifying
 
         identify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String[] choices = {
-                        " \"" + spinners[0].getSelectedItem().toString() + "\"",
-                        " \"" + spinners[1].getSelectedItem().toString() + "\"",
-                        " \"" + spinners[2].getSelectedItem().toString() + "\""
+                String[] choices = {                                                        //Get all information from Dropdowns
+                        spinners[0].getSelectedItem().toString(),
+                        spinners[1].getSelectedItem().toString(),
+                        spinners[2].getSelectedItem().toString()
                 };
                 //Give String array to ExpertManager, await response.
                 String[] response = expertManager.identifyThis(choices);
@@ -43,8 +54,8 @@ public class IdentifyFish extends AppCompatActivity {
                 for(String fish : response) {
                     options += fish + ",";
                 }
-                options.substring(0,options.length()-2);
-                options += " are all possible Fish";
+                options.substring(0,options.length()-2);                                    //Current eway of Displaying to User, TODO change
+                options += " are all possible Fish.";
                 setForFish.setText(options);
             }
         });

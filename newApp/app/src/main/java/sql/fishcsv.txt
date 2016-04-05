@@ -1,8 +1,8 @@
-"Channel Darter", "brown", "speckled", "fusiform"
-"Trout", "brown orange", "none", "fusiform"
-"Lake Sturgeon", "brown", "none", "fusiform"
-"Silver Chub", "silver", "none", "elongated compressed"
-"Minnow", "silver", "striped", "elongated" 
-"Warmouth", "yellow", "striped", "elongated"
-"Eastern Sand Darter", "yellow silver", "spotted", "elongated"
-"Silver Shiner", "silver", "striped", "elongated"
+Channel Darter,Brown,Speckled,Fusiform
+Trout,Brown Orange,None,Fusiform
+Lake Sturgeon,Brown,none,Fusiform
+Silver Chub,Silver,None,Elongated Compressed
+Minnow,Silver,Striped,Elongated
+Warmouth,Yellow,Striped,Elongated
+Eastern Sand Darter,Yellow Silver,Spotted,Elongated
+Silver Shiner,Silver,Striped,Elongated

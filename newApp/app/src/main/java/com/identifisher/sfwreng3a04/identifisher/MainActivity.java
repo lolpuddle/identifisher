@@ -24,8 +24,10 @@ public class MainActivity extends AppCompatActivity {
 
         // Testing Begins!
         mydb = new DBHelper(this);
+        InitialDatabase id = new InitialDatabase(mydb);
+        id.init();
         ExpertManager expertManager = new ExpertManager(mydb);
-        String[] info = {" \"silver\""," \"elongated\""," \"striped\""};
+        String[] info = {"Silver","Elongated","Striped"};
         String[] fishes = expertManager.identifyThis(info);
         Log.d("Test","Begin...");
         for(String a : fishes) {
