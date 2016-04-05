@@ -28,4 +28,5 @@
         <item>Great White Shark</item>
         <item>Spotted Puffer</item>
     </string-array>
+    <string name="title_activity_maps">Map</string>
 </resources>

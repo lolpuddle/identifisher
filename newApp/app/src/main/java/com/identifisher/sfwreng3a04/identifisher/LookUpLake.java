@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.content.Intent;
 
 public class LookUpLake extends AppCompatActivity {
 
@@ -13,7 +14,6 @@ public class LookUpLake extends AppCompatActivity {
         setContentView(R.layout.activity_look_up_lake);
 
         Button[] buttons = {
-                (Button) findViewById(R.id.geolocationButton),
                 (Button) findViewById(R.id.lakeLookUpPageButton)
         };
 
@@ -21,16 +21,13 @@ public class LookUpLake extends AppCompatActivity {
             btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    v.getId();
+                    Intent intent;
                     switch (v.getId()) {
-                        case (R.id.geolocationButton):
-                            //TODO find geolocation, return success/failure
-                                //if success, assign it to global variable, fill R.id.geolocationText, let User know
-                                //if not, let user it failed
-                            break;
+
                         case (R.id.lakeLookUpPageButton):
-                            //TODO double check we have valid location, return fail if we dont
-                            //If we do, query database and return information
-                                //How to return it? As a group we need to decide between pop up or scrollable text?
+                            intent = new Intent(v.getContext(), MapsActivity.class);
+                            startActivity(intent);
                             break;
                     }
                 }

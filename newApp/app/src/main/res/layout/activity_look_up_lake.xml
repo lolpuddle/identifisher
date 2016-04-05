@@ -33,32 +33,14 @@
         android:inputType="textPostalAddress"
         android:ems="10"
         android:id="@+id/geolocationText"
-        android:hint="42 Wallaby Way, Sydney"
+        android:hint="Lake Huron"
         android:layout_below="@+id/textView3"
         android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Or"
-        android:id="@+id/textView4"
-        android:layout_below="@+id/geolocationText"
-        android:layout_centerHorizontal="true" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView4"
-        android:id="@+id/geolocationButton"
-        android:layout_centerHorizontal="true"
-        android:text="Detect my Location"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/geolocationButton"
         android:layout_marginTop="20dp"
         android:id="@+id/lakeLookUpPageButton"
         android:layout_centerHorizontal="true"
