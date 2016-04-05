@@ -1,8 +1,6 @@
 package com.identifisher.sfwreng3a04.identifisher;
 
-import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
-
 import sql.DBHelper;
 import sql.FishReader;
 

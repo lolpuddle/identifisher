@@ -8,6 +8,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -65,7 +66,16 @@ public class ExpertManager {
             }
         }
         String[] toSort = allFishInOne.toArray(new String[allFishInOne.size()]);
+        for(String s : toSort) {
+            Log.d("ExpertManager","To Sort: " + s);
+        }
+        for(String s : sort(toSort)) {
+            Log.d("ExpertManager","Sorted: " + s);
+        }
         toSort = removeDup(sort(toSort));
+        for(String s : toSort) {
+            Log.d("ExpertManager","Shrunk: " + s);
+        }
         return toSort;
         //return overlap(allFish.toArray(new String[allFish.size()][maxCol]));
     }
@@ -114,7 +124,7 @@ public class ExpertManager {
      */
     private String[] removeDup(String[] arr) {
         List<String> temp = Arrays.asList(arr);
-        Set<String> set = new HashSet<String> (temp);
+        Set<String> set = new LinkedHashSet<String>(temp);
         String[] newArr = new String[set.size()];
         set.toArray(newArr);
         return newArr;
@@ -125,12 +135,16 @@ public class ExpertManager {
      * @return String[] - list of fish that appear in all 3 arrays
      */
     private String[] overlap(String[][] allFish) {
-        ArrayList<String> possibleFish = new ArrayList<String>();
-        String[] start = sharedElement(allFish[0],allFish[1]);
-        for (int i = 2; i < allFish.length; i++) {
-            start = sharedElement(start,allFish[i]);
+        if(allFish.length > 1) {
+            return allFish[0];
+        } else {
+            ArrayList<String> possibleFish = new ArrayList<String>();
+            String[] start = sharedElement(allFish[0], allFish[1]);
+            for (int i = 2; i < allFish.length; i++) {
+                start = sharedElement(start, allFish[i]);
+            }
+            return start;
         }
-        return start;
     }
 
     /**

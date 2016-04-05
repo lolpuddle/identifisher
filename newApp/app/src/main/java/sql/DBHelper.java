@@ -62,13 +62,13 @@ public class DBHelper extends SQLiteOpenHelper {
      */
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE "+ LAKE_TABLE +
-                        " ("+LAKE_COLUMN_ID+" integer primary key autoincrement, "+LAKE_COLUMN_NAME+" varchar(255))");
-        db.execSQL("CREATE TABLE "+ FISH_TABLE+
-                " ("+FISH_COLUMN_ID+" integer primary key autoincrement, "+FISH_COLUMN_NAME+" varchar(255), " +
+        db.execSQL("CREATE TABLE " + LAKE_TABLE +
+                " (" + LAKE_COLUMN_ID + " integer primary key autoincrement, " + LAKE_COLUMN_NAME + " varchar(255))");
+        db.execSQL("CREATE TABLE " + FISH_TABLE +
+                " (" + FISH_COLUMN_ID + " integer primary key autoincrement, " + FISH_COLUMN_NAME + " varchar(255), " +
                 FISH_COLUMN_COLOR + " varchar(255)," +
                 FISH_COLUMN_PATTERN + " varchar(255)," +
-                FISH_COLUMN_SHAPE +" varchar(255))");
+                FISH_COLUMN_SHAPE + " varchar(255))");
         db.execSQL("CREATE TABLE " + FISH_LAKE_TABLE +
                 " (" + FISH_LAKE_COLUMN_LAKE + " integer, " + FISH_LAKE_COLUMN_FISH + " integer " + LAKE_COLUMN_NAME + " integer," +
                 "FOREIGN KEY (" + FISH_LAKE_COLUMN_LAKE + ") REFERENCES " + LAKE_TABLE + "(" + LAKE_COLUMN_ID + ")" +
@@ -167,12 +167,39 @@ public class DBHelper extends SQLiteOpenHelper {
      */
     public boolean addFishToLake  (int lake, int fish) {
         SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(FISH_LAKE_COLUMN_LAKE, lake);
-        contentValues.put(FISH_LAKE_COLUMN_FISH, fish);
-        contentValues.put(FISH_LAKE_COLUMN_NUMBER, 0);
-        db.insert(FISH_LAKE_TABLE, null, contentValues);
+        int currentCount = getFishLakeCount(lake, fish);
+        if(currentCount == -1) {
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(FISH_LAKE_COLUMN_LAKE, lake);
+            contentValues.put(FISH_LAKE_COLUMN_FISH, fish);
+            contentValues.put(FISH_LAKE_COLUMN_NUMBER, 0);
+            db.insert(FISH_LAKE_TABLE, null, contentValues);
+        } else {
+            ContentValues newValues = new ContentValues();
+            newValues.put(FISH_LAKE_COLUMN_NUMBER, currentCount++);
+            db.update(FISH_LAKE_TABLE, newValues, FISH_LAKE_COLUMN_LAKE + "=" + lake + " AND " + FISH_LAKE_COLUMN_FISH + "=" + fish, null);
+        }
         return true;
+    }
+
+    /**
+     *
+     * @param lake
+     * @param fish
+     * @return
+     */
+    private int getFishLakeCount(int lake, int fish) {
+        SQLiteDatabase read = this.getReadableDatabase();
+        Cursor l = read.rawQuery(
+                "SELECT " + FISH_LAKE_COLUMN_NUMBER + " FROM " + FISH_LAKE_TABLE +
+                        " WHERE " + FISH_LAKE_COLUMN_LAKE + "=" + lake + " AND " +
+                                    FISH_LAKE_COLUMN_FISH + "=" + fish,null);
+        if(l.getCount() < -1) {
+            return -1;
+        } else {
+            l.moveToFirst();
+            return Integer.getInteger(l.getString(l.getColumnIndex(FISH_LAKE_COLUMN_NUMBER)));
+        }
     }
 
     /**
