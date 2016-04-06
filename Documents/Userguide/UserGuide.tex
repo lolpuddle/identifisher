@@ -47,7 +47,7 @@ build a global logging system that will provide percentage catch rate statistics
 educate young, novice fishers, and integrate technology into a relatively non-technological field.
 
 
-\section{Instruction}
+\section{Instructions}
 This section will discuss the layout of each page of the application and each page's respective functions.
 A walkthrough of how to complete possible tasks will also be presented.
 
@@ -66,7 +66,7 @@ where the user is able to select different properties of a fish that they wish t
 user may search for a lake near a certain location to find a list of possible fish in the area. The \textit{ADD A FISH} button will navigate
 to a page where the user may add a fish and its location to the database of the application without going through the identification process.\\
 
-\subsection{IDENTIFISHER page}
+\subsection{IDENTIFISHER Page}
 The IDENTIFISHER page displays an instruction message at the top of the page: \textit{Please enter the following criteria}. There are three
 drop-down menus representing colour, pattern, and shape of the fish respectively. There is an "IDENTIFY!" button towards the bottom of the page that the user can select in order to start the identification once the desired properties have been selected.\\
 
@@ -78,7 +78,7 @@ drop-down menus representing colour, pattern, and shape of the fish respectively
 After selecting the "IDENTIFY!" button, the application will display the most probable types of fish. The user can also click on the drop-down
 menu to display a list of other possible species of fish. Finally the user may add the fish to the database by pressing the \textit{ADD FISH} button.\\
 
-\subsection{LOOK UP LAKE page}
+\subsection{LOOK UP LAKE Page}
 The LOOK UP LAKE page has a title as well as instructions prompting the user to input a location. There is a text field for input and a
 \textit{FIND MY LAKE} button. Once the button is pressed having an input in the text field, the program will return a list of fish that can be found within the
 region\\
@@ -87,7 +87,7 @@ region\\
 	\caption{LOOK UP LAKE page of IdentiFisher Application}
 \end{figure}
 
-\subsection{ADD A FISH page}
+\subsection{ADD A FISH Page}
 The top of the page displays the title as well as a message to help the user understand the function of the page. There is a text field to input the
 location of the fish found. An example input is displayed in the text field: \textit{42 Wallaby Way, Sydney}. There is also a \textit{DETECT MY LOCATION} button
 to use the current location of the device as input. There is a drop-down list of fish to choose from and an \textit{ADD FISH} button.\\
@@ -126,17 +126,17 @@ In order to delete an expert, follow these instructions:
 \end{itemize}
 
 \section{Functional Requirements}
-The functional requirements that were identified at the early development stages are satisfied.
-The following contains the the means which some of the important requirements fulfilled
+The functional requirements that were identified at the early development stages are satisfied. The following list describes the manner in which the requirements have been satisfied:
+
 \begin{itemize} 
 	\item F1.1: The application accepts the physical specifications of a fish by allowing the user to pick appropriate traits from
-	drop down menus and are then used by experts to query the database.
-	\item F1.2: The application will sort all fish possible given by experts from most to least frequent with more frequent fish have higher
+	drop-down menus which are then used by experts to query the database.
+	\item F1.2: The application will sort all fish possible given by experts from most to least frequently with more frequently named fish having higher
 	accuracy. The result will be displayed to the user in that order with no overlaps.
-	\item F1.3: The user may submit the fish using the add fish button or page.
-	\item F2.2: The application can show the user statistics of a lake near a location by the look up lake page.
-	\item F3.3: The application allows the user to submit their catch results using the add fish page.
-	\item Expert add/removal/modify: The addition, deletion, and update of experts can be done by modifying the java code as
+	\item F1.3: The user may submit the fish using the ADD FISH button or page.
+	\item F2.2: The application can show the user catch rate statistics of a lake near a location using the LOOK UP LAKE page.
+	\item F3.3: The application allows the user to submit their catch results using the ADD FISH page.
+	\item Expert add/removal/modify: The addition, deletion, and update of experts can be done by modifying the Java code as
 	described in the aforementioned section.
 \end{itemize}
 
