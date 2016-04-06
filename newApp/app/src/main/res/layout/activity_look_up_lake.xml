@@ -44,23 +44,7 @@
         android:id="@+id/lakeLookUpPageButton"
         android:text="Find my Lake!"
         android:layout_marginTop="37dp"
-        android:layout_below="@+id/button"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/geolocationText" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="or"
-        android:id="@+id/textView4"
-        android:layout_below="@+id/geolocationText"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="DETECT MY LOCATION!"
-        android:id="@+id/button"
-        android:layout_below="@+id/textView4"
-        android:layout_centerHorizontal="true" />
 </RelativeLayout>
