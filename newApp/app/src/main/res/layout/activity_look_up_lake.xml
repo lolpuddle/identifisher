@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Begin by entering your location"
+        android:text="Begin by Entering Your Location"
         android:id="@+id/textView3"
         android:layout_below="@+id/textView2"
         android:layout_centerHorizontal="true" />
@@ -33,7 +33,7 @@
         android:inputType="textPostalAddress"
         android:ems="10"
         android:id="@+id/geolocationText"
-        android:hint="Enter a location"
+        android:hint="42 Wallaby Way, Sydney"
         android:layout_below="@+id/textView3"
         android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true" />
@@ -43,8 +43,24 @@
         android:layout_height="wrap_content"
         android:id="@+id/lakeLookUpPageButton"
         android:text="Find my Lake!"
+        android:layout_marginTop="37dp"
+        android:layout_below="@+id/button"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="or"
+        android:id="@+id/textView4"
         android:layout_below="@+id/geolocationText"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2"
-        android:layout_marginTop="49dp" />
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DETECT MY LOCATION!"
+        android:id="@+id/button"
+        android:layout_below="@+id/textView4"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

@@ -13,13 +13,16 @@ import sql.DBHelper;
 public class ColorExpert extends Expert {
 
     DBHelper database;
+    private int secretKey;
 
-    public ColorExpert(DBHelper db) {
+    public ColorExpert(DBHelper db, int key) {
         database = db;
+        secretKey = key;
     }
 
     @Override
     public String[] getFish(String data) {
+        data = CeaserCipher.decode(data, secretKey);
         String[][] info = extractColor(database.getAllFishInformation());
 
         ArrayList<String> possibleFish = new ArrayList<String>();
@@ -31,7 +34,7 @@ public class ColorExpert extends Expert {
             }
         }
         String[] toReturn = new String[possibleFish.size()];
-        return possibleFish.toArray(toReturn);
+        return CeaserCipher.encode(possibleFish.toArray(toReturn),secretKey);
     }
 
     private String[][] extractColor(String[][] allFishInformation) {

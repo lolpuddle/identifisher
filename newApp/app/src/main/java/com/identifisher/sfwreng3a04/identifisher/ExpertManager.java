@@ -1,6 +1,10 @@
 package com.identifisher.sfwreng3a04.identifisher;
 
 import android.util.Log;
+
+import java.io.UnsupportedEncodingException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -12,7 +16,12 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Random;
 import java.util.Set;
+
+import javax.crypto.SecretKey;
+import javax.crypto.SecretKeyFactory;
+import javax.crypto.spec.DESKeySpec;
 
 import sql.DBHelper;
 
@@ -28,17 +37,21 @@ public class ExpertManager {
 
     Expert[] experts;
     DBHelper db;
+    private int secretKey;
 
     /**
      * Contructor - Builds a ExpertManager while initializing Experts
      * @param dbHelper - The Database this ExpertManager will use
      */
     public ExpertManager(DBHelper dbHelper) {
+        Random rand = new Random();
+        int key = rand.nextInt(60);
+        secretKey = key;
         db = dbHelper;
         experts = new Expert[3];
-        experts[0] = new ColorExpert(dbHelper);
-        experts[1] = new ShapeExpert(dbHelper);
-        experts[2] = new PatternExpert(dbHelper);
+        experts[0] = new ColorExpert(dbHelper, key);
+        experts[1] = new ShapeExpert(dbHelper, key);
+        experts[2] = new PatternExpert(dbHelper, key);
     }
 
     /**
@@ -52,7 +65,7 @@ public class ExpertManager {
         String[] hold;
         int maxCol = 0;
         for (int i = 0; i < experts.length; i++) {
-            hold = experts[i].getFish(info[i]);
+            hold = CeaserCipher.decode(experts[i].getFish(CeaserCipher.encode(info[i],secretKey)),secretKey);
             for(String s : hold) {
                 Log.d("ExpertManager",s + " was returned by Expert #" + i);
             }

@@ -13,13 +13,16 @@ import sql.DBHelper;
 public class ShapeExpert extends Expert {
 
     DBHelper database;
+    private int secretKey;
 
-    public ShapeExpert(DBHelper db) {
+    public ShapeExpert(DBHelper db, int key) {
         database = db;
+        secretKey = key;
     }
 
     @Override
     public String[] getFish(String data) {
+        data = CeaserCipher.decode(data, secretKey);
         String[][] info = extractShape(database.getAllFishInformation());
         Log.d("ShapeExpert", "Beginning Shape Analysis... Looking for " + data);
         ArrayList<String> possibleFish = new ArrayList<String>();
@@ -31,7 +34,7 @@ public class ShapeExpert extends Expert {
             }
         }
         String[] toReturn = new String[possibleFish.size()];
-        return possibleFish.toArray(toReturn);
+        return CeaserCipher.encode(possibleFish.toArray(toReturn),secretKey);
     }
 
     private String[][] extractShape(String[][] allFishInformation) {

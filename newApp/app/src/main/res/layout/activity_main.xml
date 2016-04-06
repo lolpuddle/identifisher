@@ -21,12 +21,13 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
         android:text="IdentiFisher"
         android:id="@+id/identifyButton"
-        android:layout_below="@+id/titleTextView"
+        android:layout_marginTop="44dp"
+        android:layout_below="@+id/textView8"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="46dp" />
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp" />
 
     <Button
         android:layout_width="match_parent"
@@ -35,18 +36,17 @@
         android:text="Look Up Lake"
         android:id="@+id/lakeLookUpButton"
         android:layout_below="@+id/identifyButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="46dp" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
         android:text="Add A Fish"
         android:id="@+id/addFishButton"
         android:layout_below="@+id/lakeLookUpButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="46dp" />
+        android:layout_alignLeft="@+id/lakeLookUpButton"
+        android:layout_alignStart="@+id/lakeLookUpButton"
+        android:layout_marginRight="20dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -54,6 +54,24 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Powered By Group 7"
         android:id="@+id/footerTextView"
+        android:layout_above="@+id/textView9"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="An Android Application"
+        android:id="@+id/textView8"
+        android:layout_below="@+id/titleTextView"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Software Engineering 3A04"
+        android:id="@+id/textView9"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>

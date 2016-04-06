@@ -13,13 +13,16 @@ import sql.DBHelper;
 public class PatternExpert extends Expert {
 
     DBHelper database;
+    private int secretKey;
 
-    public PatternExpert(DBHelper db) {
+    public PatternExpert(DBHelper db, int key) {
         database = db;
+        secretKey = key;
     }
 
     @Override
     public String[] getFish(String data) {
+        data = CeaserCipher.decode(data,secretKey);
         String[][] info = extractPattern(database.getAllFishInformation());
         Log.d("PatternExpert", "Beginning Pattern Analysis... Looking for " + data);
         ArrayList<String> possibleFish = new ArrayList<String>();
@@ -31,7 +34,7 @@ public class PatternExpert extends Expert {
             }
         }
         String[] toReturn = new String[possibleFish.size()];
-        return possibleFish.toArray(toReturn);
+        return CeaserCipher.encode(possibleFish.toArray(toReturn),secretKey);
     }
 
     private String[][] extractPattern(String[][] allFishInformation) {
