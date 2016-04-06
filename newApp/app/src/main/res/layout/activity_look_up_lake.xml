@@ -33,7 +33,7 @@
         android:inputType="textPostalAddress"
         android:ems="10"
         android:id="@+id/geolocationText"
-        android:hint="Lake Huron"
+        android:hint="Enter a location"
         android:layout_below="@+id/textView3"
         android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true" />
@@ -41,8 +41,10 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:id="@+id/lakeLookUpPageButton"
-        android:layout_centerHorizontal="true"
-        android:text="Find my Lake!"/>
+        android:text="Find my Lake!"
+        android:layout_below="@+id/geolocationText"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_marginTop="49dp" />
 </RelativeLayout>
